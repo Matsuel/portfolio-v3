@@ -1,0 +1,47 @@
+.navbarWrap{
+    width: 66%;
+    height: 60px;
+    top: 32px;
+    position: absolute;
+    background-color: rgba(24, 24, 29, 30%);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbarLogo{
+    width: 150px;
+}
+
+.navbarLogo:hover{
+    cursor: pointer;
+}
+
+.navBarLeft{
+    width: 70%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.navbarLinks{
+    width: 45%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbarReso{
+    width: 10%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbarResoIcon:hover{
+    cursor: pointer;
+}
