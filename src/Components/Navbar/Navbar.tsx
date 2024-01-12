@@ -1,0 +1,28 @@
+import React from 'react'
+import "./Navbar.css"
+import Logo from '../../assets/logo.png'
+import Github from '../../assets/github.svg'
+import Linkedin from '../../assets/linkedin.svg'
+
+const Navbar = () => {
+    const links = ["Home", "About", "Projects", "Contact"]
+    const linksRef = ["#home", "#about", "#projects", "#contact"]
+    return (
+        <div className="navbarWrap">
+            <div className="navBarLeft">
+                <img src={Logo} alt="logo" className="navbarLogo" onClick={() => window.location.href = "/"} />
+                <div className="navbarLinks">
+                    {[0, 1, 2, 3].map((index) => (
+                        <a href={linksRef[index]} className="navbarLink">{links[index]}</a>
+                    ))}
+                </div>
+            </div>
+            <div className="navbarReso">
+                <img src={Github} alt="github" className="navbarResoIcon" onClick={() => window.open("https://github.com/Matsuel", "_blank")} />
+                <img src={Linkedin} alt="linkedin" className="navbarResoIcon" onClick={() => window.open("https://www.linkedin.com/in/math%C3%A9o-lang-146539275/", "_blank")} />
+            </div>
+        </div>
+    )
+}
+
+export default Navbar
