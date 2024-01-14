@@ -3,6 +3,7 @@ import "./Navbar.css"
 import Logo from '../../assets/logo.png'
 import Github from '../../assets/github.svg'
 import Linkedin from '../../assets/linkedin.svg'
+import Mode from '../../assets/mode.svg'
 
 const Navbar = () => {
     const links = ["Home", "About", "Projects", "Contact"]
@@ -20,6 +21,7 @@ const Navbar = () => {
             <div className="navbarReso">
                 <img src={Github} alt="github" className="navbarResoIcon" onClick={() => window.open("https://github.com/Matsuel", "_blank")} />
                 <img src={Linkedin} alt="linkedin" className="navbarResoIcon" onClick={() => window.open("https://www.linkedin.com/in/math%C3%A9o-lang-146539275/", "_blank")} />
+                <img src={Mode} alt="mode" className="navbarResoIcon" />
             </div>
         </div>
     )
