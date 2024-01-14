@@ -1,0 +1,25 @@
+.homeWrap{
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+}
+
+.rondBg{
+    position: absolute;
+    top: -15%;
+    left: 0;
+    /* width: 100%;
+    height: 100%; */
+    overflow: hidden;
+    z-index: -2;
+    /* animation: rotation 5s infinite linear; */
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }    
+}
