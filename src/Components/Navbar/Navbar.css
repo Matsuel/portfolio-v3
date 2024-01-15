@@ -2,10 +2,10 @@
     width: 66%;
     height: 60px;
     top: 32px;
-    position: absolute;
-    background-color: rgba(24, 24, 29, 30%);
-    backdrop-filter: blur(10px);
-    border-radius: 12px;
+    position: fixed;
+    background-color: transparent;
+    backdrop-filter: blur(15px);
+    border-radius: 35px;
     display: flex;
     justify-content: space-between;
     align-items: center;
