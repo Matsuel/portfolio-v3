@@ -27,10 +27,18 @@ import Vercel from "../../assets/skillsAssets/vercel.svg"
 
 const Skills = () => {
     const skills = [ Cpp, CSharp, Css, Docker, Dotnet, Figma, Github, Golang, Html, Java, Javascript, Linux, Mongodb, Netlify, NextJS, NodeJS, Php, Python, ReactJS, Sqlite, Tailwind, Typescript, Unity, Vercel ]
+    const skillsName = [ "C++", "C#", "CSS", "Docker", ".NET", "Figma", "Github", "Golang", "HTML", "Java", "Javascript", "Linux", "MongoDB", "Netlify", "NextJS", "NodeJS", "PHP", "Python", "ReactJS", "SQLite", "Tailwind", "Typescript", "Unity", "Vercel" ]
     return (
-        <div className='skillsWrap' id='skills'>
+        <section className='skillsWrap' id='skills'>
+            {skills.map((skill, index) => {
+                return (
+                    <div className='skill-image' key={index}>
+                        <img src={skill} alt='skill-image' />
+                    </div>
 
-        </div>
+                )
+            })}
+        </section>
     )
 }
 
