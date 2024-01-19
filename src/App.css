@@ -13,7 +13,7 @@
 
 .topGradient {
   top: 0;
-  position: absolute;
+  position: fixed;
   height: max-content;
   z-index: -1;
 }
