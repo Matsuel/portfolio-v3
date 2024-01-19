@@ -6,8 +6,8 @@ import Linkedin from '../../assets/linkedin.svg'
 import Mode from '../../assets/mode.svg'
 
 const Navbar = () => {
-    const links = ["Home", "About", "Projects", "Contact"]
-    const linksRef = ["#home", "#about", "#projects", "#contact"]
+    const links = ["Home", "Skills", "Projects", "Contact"]
+    const linksRef = ["#home", "#skills", "#projects", "#contact"]
     return (
         <div className="navbarWrap">
             <div className="navBarLeft">
