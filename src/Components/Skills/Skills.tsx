@@ -26,6 +26,7 @@ import Unity from "../../Assets/skillsAssets/unity.svg"
 import Vercel from "../../Assets/skillsAssets/vercel.svg"
 
 const Skills = () => {
+    const skills = [ Cpp, CSharp, Css, Docker, Dotnet, Figma, Github, Golang, Html, Java, Javascript, Linux, Mongodb, Netlify, NextJS, NodeJS, Php, Python, ReactJS, Sqlite, Tailwind, Typescript, Unity, Vercel ]
     return (
         <div className='skillsWrap' id='skills'>
 
