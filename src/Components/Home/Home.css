@@ -20,6 +20,16 @@
 .logo-image{
     width: 120%;
     height: auto;
+    animation: scaleUp 10s ease-in-out infinite alternate;
+}
+
+@keyframes scaleUp{
+    0%{
+        transform: scale(0.5);
+    }
+    100%{
+        transform: scale(1);
+    }
 }
 
 .home-content{
