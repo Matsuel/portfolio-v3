@@ -23,15 +23,19 @@
 }
 
 .home-content{
-    width: 70%;
+    width: 60%;
 }
 
 .home-title{
     color: #fff;
+    font-size: 5rem;
+    margin-bottom: 5vh;
 }
 
 .home-text{
     color: #fff;
+    font-size: 1.5rem;
+    margin-bottom: 10vh;
 }
 
 .home-button{
