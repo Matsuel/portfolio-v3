@@ -5,8 +5,9 @@
     height: auto;
     /* background-color: #181818; */
     /* border: 1px solid #fff; */
+    background-color: rgba(0, 0, 0, 0.2);
     margin-bottom: 15vh;
-    /* border-radius: 25px; */
+    border-radius: 25px;
     display: flex;
     flex-direction: row;
     align-items: center;

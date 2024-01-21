@@ -18,6 +18,13 @@
   z-index: -1;
 }
 
+.botGradient {
+  bottom: 0;
+  position: fixed;
+  height: max-content;
+  z-index: -1;
+}
+
 @media screen and (min-width:1920px) {
   .topGradient {
     min-width: 100%;
