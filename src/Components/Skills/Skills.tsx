@@ -30,6 +30,7 @@ const Skills = () => {
     const skillsName = [ "C++", "C#", "CSS", "Docker", ".NET", "Figma", "Github", "Golang", "HTML", "Java", "Javascript", "Linux", "MongoDB", "Netlify", "NextJS", "NodeJS", "PHP", "Python", "ReactJS", "SQLite", "Tailwind", "Typescript", "Unity", "Vercel" ]
     return (
         <section className='skillsWrap' id='skills'>
+            <h1 className="skills-title">Skills</h1>
             {skills.map((skill, index) => {
                 return (
                     <div className='skill-image' key={index}>
