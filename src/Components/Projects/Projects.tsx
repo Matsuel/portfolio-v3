@@ -23,12 +23,11 @@ const Projects = () => {
             <div className='projects-container'>
                 {Datas.map((project: Project, index: number) => {
                     return (
-                        
-                            (index % 2 !== 0) ? (
+                        (index % 2 !== 0) ? (
                             <div className="project">
                                 <img src={Images[index]} alt="" className="project-img" />
                                 <div className="project-content">
-                                    <h1 className="project-number">0{index+1}.</h1>
+                                    <h1 className="project-number">0{index + 1}.</h1>
                                     <h2 className="project-title">{project.title}</h2>
                                     <p className="project-description">{project.description}</p>
                                     <a href={project.githubLink} className="project-link"><img src={ViewMore} alt="" className="project-link-img" /></a>
@@ -37,7 +36,7 @@ const Projects = () => {
                         ) : (
                             <div className="project">
                                 <div className="project-content">
-                                    <h1 className="project-number">0{index+1}.</h1>
+                                    <h1 className="project-number">0{index + 1}.</h1>
                                     <h2 className="project-title">{project.title}</h2>
                                     <p className="project-description">{project.description}</p>
                                     <a href={project.githubLink} className="project-link"><img src={ViewMore} alt="" className="project-link-img" /></a>
