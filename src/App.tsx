@@ -6,6 +6,7 @@ import topGradient from './assets/top-gradient.svg'
 import botGradient from './assets/bot-gradient.svg'
 import Home from './Components/Home/Home';
 import Skills from './Components/Skills/Skills';
+import Projects from './Components/Projects/Projects';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Navbar />
       <Home />
       <Skills />
+      <Projects />
       <img src={botGradient} alt="bot gradient" className="botGradient" />
     </div>
   );
