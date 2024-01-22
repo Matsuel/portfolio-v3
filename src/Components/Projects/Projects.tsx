@@ -1,6 +1,7 @@
 import React from 'react'
 import './Projects.css'
 import { Datas } from './datas'
+import AppMeteoMobile from '../../assets/projects/wheathermobile.png'
 import AppMeteo from '../../assets/projects/app meteo csharp.png'
 import Calc from '../../assets/projects/csharp calc.png'
 import LeRebot from '../../assets/projects/lerobot.png'
@@ -16,7 +17,7 @@ interface Project {
 }
 
 const Projects = () => {
-    const Images = [Portfolio, Whatsapp, AppMeteo, LeRebot, Calc, Taquin]
+    const Images = [Portfolio, Whatsapp, AppMeteoMobile, LeRebot, Calc, Taquin, AppMeteo]
     return (
         <section id='projects' className='projects'>
             <h1 className="projects-title">Projects</h1>
@@ -30,7 +31,7 @@ const Projects = () => {
                                     <h1 className="project-number">0{index + 1}.</h1>
                                     <h2 className="project-title">{project.title}</h2>
                                     <p className="project-description">{project.description}</p>
-                                    <a href={project.githubLink} className="project-link"><img src={ViewMore} alt="" className="project-link-img" /></a>
+                                    <a target='_blank' href={project.githubLink} className="project-link"><img src={ViewMore} alt="" className="project-link-img" /></a>
                                 </div>
                             </div>
                         ) : (
@@ -39,7 +40,7 @@ const Projects = () => {
                                     <h1 className="project-number">0{index + 1}.</h1>
                                     <h2 className="project-title">{project.title}</h2>
                                     <p className="project-description">{project.description}</p>
-                                    <a href={project.githubLink} className="project-link"><img src={ViewMore} alt="" className="project-link-img" /></a>
+                                    <a target='_blank' href={project.githubLink} className="project-link"><img src={ViewMore} alt="" className="project-link-img" /></a>
                                 </div>
                                 <img src={Images[index]} alt="" className="project-img" />
                             </div>
