@@ -7,6 +7,7 @@ import LeRebot from '../../assets/projects/lerobot.png'
 import Portfolio from '../../assets/projects/portfolio v2.png'
 import Taquin from '../../assets/projects/taquin.png'
 import Whatsapp from '../../assets/projects/whatsapp.png'
+import ViewMore from '../../assets/view.svg'
 
 interface Project {
     title: string;
@@ -22,14 +23,26 @@ const Projects = () => {
             <div className='projects-container'>
                 {Datas.map((project: Project, index: number) => {
                     return (
-                        <div className="project">
-                            <img src={Images[index]} alt="" className="project-img" />
-                            <div className="project-content">
-                                <h2 className="project-title">{project.title}</h2>
-                                <p className="project-description">{project.description}</p>
-                                <a href={project.githubLink} className="project-link">Voir le projet</a>
+                        
+                            (index % 2 !== 0) ? (
+                            <div className="project">
+                                <img src={Images[index]} alt="" className="project-img" />
+                                <div className="project-content">
+                                    <h2 className="project-title">{project.title}</h2>
+                                    <p className="project-description">{project.description}</p>
+                                    <a href={project.githubLink} className="project-link"><img src={ViewMore} alt="" className="project-link-img" /></a>
+                                </div>
                             </div>
-                        </div>
+                        ) : (
+                            <div className="project">
+                                <div className="project-content">
+                                    <h2 className="project-title">{project.title}</h2>
+                                    <p className="project-description">{project.description}</p>
+                                    <a href={project.githubLink} className="project-link"><img src={ViewMore} alt="" className="project-link-img" /></a>
+                                </div>
+                                <img src={Images[index]} alt="" className="project-img" />
+                            </div>
+                        )
                     )
                 })}
             </div>
