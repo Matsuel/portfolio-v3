@@ -14,6 +14,7 @@ interface Project {
     title: string;
     githubLink: string;
     description: string;
+    public: boolean;
 }
 
 const Projects = () => {
@@ -31,7 +32,7 @@ const Projects = () => {
                                     <h1 className="project-number">0{index + 1}.</h1>
                                     <h2 className="project-title">{project.title}</h2>
                                     <p className="project-description">{project.description}</p>
-                                    <a target='_blank' href={project.githubLink} className="project-link"><img src={ViewMore} alt="" className="project-link-img" /></a>
+                                    <a target='_blank' href={project.public ? project.githubLink : undefined} className="project-link"><img src={ViewMore} alt="" className="project-link-img" /></a>
                                 </div>
                             </div>
                         ) : (
@@ -40,7 +41,7 @@ const Projects = () => {
                                     <h1 className="project-number">0{index + 1}.</h1>
                                     <h2 className="project-title">{project.title}</h2>
                                     <p className="project-description">{project.description}</p>
-                                    <a target='_blank' href={project.githubLink} className="project-link"><img src={ViewMore} alt="" className="project-link-img" /></a>
+                                    <a target='_blank' href={project.public ? project.githubLink : undefined} className="project-link"><img src={ViewMore} alt="" className="project-link-img" /></a>
                                 </div>
                                 <img src={Images[index]} alt="" className="project-img" />
                             </div>
