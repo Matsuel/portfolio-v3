@@ -9,6 +9,7 @@ import Portfolio from '../../assets/projects/portfolio v2.png'
 import Taquin from '../../assets/projects/taquin.png'
 import Whatsapp from '../../assets/projects/whatsapp.png'
 import ViewMore from '../../assets/view.svg'
+import ViewPrivate from '../../assets/viewPrivate.svg'
 
 interface Project {
     title: string;
@@ -32,7 +33,7 @@ const Projects = () => {
                                     <h1 className="project-number">0{index + 1}.</h1>
                                     <h2 className="project-title">{project.title}</h2>
                                     <p className="project-description">{project.description}</p>
-                                    <a target='_blank' href={project.public ? project.githubLink : undefined} className="project-link"><img src={ViewMore} alt="" className="project-link-img" /></a>
+                                    <a target='_blank' href={project.public ? project.githubLink : undefined} className="project-link"><img src={project.public? ViewMore:ViewPrivate} alt="" className="project-link-img" /></a>
                                 </div>
                             </div>
                         ) : (
@@ -41,7 +42,7 @@ const Projects = () => {
                                     <h1 className="project-number">0{index + 1}.</h1>
                                     <h2 className="project-title">{project.title}</h2>
                                     <p className="project-description">{project.description}</p>
-                                    <a target='_blank' href={project.public ? project.githubLink : undefined} className="project-link"><img src={ViewMore} alt="" className="project-link-img" /></a>
+                                    <a target='_blank' href={project.public ? project.githubLink : undefined} className="project-link"><img src={project.public? ViewMore:ViewPrivate} alt="" className="project-link-img" /></a>
                                 </div>
                                 <img src={Images[index]} alt="" className="project-img" />
                             </div>
