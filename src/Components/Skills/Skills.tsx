@@ -14,8 +14,8 @@ const Skills = () => {
                 return (
                     <div className='skill-image' key={index}>
                         <img src={image} alt='skill-image' />
+                        <p className='skill-name'>{skillsName[index]}</p>
                     </div>
-
                 )
             })}
         </section>
