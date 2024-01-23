@@ -4,7 +4,7 @@ import randomizeList from '../../Functions/RandomList'
 import capitalizeList from '../../Functions/CapitalizeList'
 
 const Skills = () => {
-    const skillsTypes = ['Language', 'Framework', 'Software', 'Database', 'OS', 'Code editor', 'Versioning']
+    const skillsTypes = ['Language', 'Framework', 'Software', 'Database', 'OS', 'Code editor', 'Versioning', 'Styling', 'Other']
     const images = require.context('../../assets/skillsAssets', true);
     const imagesList = randomizeList(images.keys().map((image) => images(image)));
     const imageNames = capitalizeList(imagesList.map((imagePath =>{
