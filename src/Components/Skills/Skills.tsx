@@ -22,7 +22,6 @@ const Skills = () => {
         const skillType = imageNameWithExtension.split('-')[1][0]
         return skillType;
     }));
-    console.log(skillsTypesList)
     
     return (
         <section className={`skillsWrap ${darkMode ? "homeWrap-dark" : "homeWrap-light"}`} id='skills'>
