@@ -58,9 +58,9 @@ const Contact = () => {
             <form className={`contact-form ${darkMode ? 'contact-form-dark' : 'contact-form-light'}`} onSubmit={handleSubmit} ref={formRef}>
                 <div className="line">
                     <div className="macOS">
-                        <img src={Mac1} alt="mac1" className="mac" />
-                        <img src={Mac2} alt="mac2" className="mac" />
-                        <img src={Mac3} alt="mac3" className="mac" />
+                        <img src={Mac1} alt="mac1" className="mac" onMouseOver={(e) => (e.currentTarget.src = Mac1a)} onMouseOut={(e) => (e.currentTarget.src = Mac1)} />
+                        <img src={Mac2} alt="mac2" className="mac" onMouseOver={(e) => (e.currentTarget.src = Mac2a)} onMouseOut={(e) => (e.currentTarget.src = Mac2)} />
+                        <img src={Mac3} alt="mac3" className="mac" onMouseOver={(e) => (e.currentTarget.src = Mac3a)} onMouseOut={(e) => (e.currentTarget.src = Mac3)} />
                     </div>
                     <h2 className={`message-title ${darkMode ? 'title-light' : 'title-dark'}`}>New Message</h2>
                 </div>
