@@ -1,4 +1,4 @@
-import React, { useState,useContext } from 'react'
+import React, { useState,useContext, useRef } from 'react'
 import "./Navbar.css"
 import Logo from '../../assets/logo.png'
 import Github from '../../assets/github.svg'
@@ -13,8 +13,20 @@ const Navbar = () => {
     const links = ["Home", "Skills", "Projects", "Contact"]
     const linksRef = ["#home", "#skills", "#projects", "#contact"]
     const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
+    const navRef =  useRef<HTMLDivElement>(null);
+
+    window.onwheel = (e) => {
+        if (e.deltaY > 0) {
+            // @ts-ignore
+            navRef.current.style.top = "-100px";
+        }else if (e.deltaY < 0) {
+            // @ts-ignore
+            navRef.current.style.top = "32px";
+        }
+    }
+
     return (
-        <div className="navbarWrap">
+        <div className="navbarWrap" ref={navRef}>
             <div className="navBarLeft">
                 <img src={Logo} alt="logo" className="navbarLogo" onClick={() => window.location.href = "/"} />
                 <div className="navbarLinks">
