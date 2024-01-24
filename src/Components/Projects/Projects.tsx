@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './Projects.css'
 import { Datas } from './datas'
 import AppMeteoMobile from '../../assets/projects/wheathermobile.png'
@@ -9,7 +9,9 @@ import Portfolio from '../../assets/projects/portfolio v2.png'
 import Taquin from '../../assets/projects/taquin.png'
 import Whatsapp from '../../assets/projects/whatsapp.png'
 import ViewMore from '../../assets/view.svg'
+import ViewLight from '../../assets/viewLight.svg'
 import ViewPrivate from '../../assets/viewPrivate.svg'
+import { DarkModeContext } from '../../darkMode'
 
 interface Project {
     title: string;
@@ -19,10 +21,11 @@ interface Project {
 }
 
 const Projects = () => {
+    const { darkMode } = useContext(DarkModeContext)
     const Images = [Portfolio, Whatsapp, AppMeteoMobile, LeRebot, Calc, Taquin, AppMeteo]
     return (
-        <section id='projects' className='projects'>
-            <h1 className="projects-title">Projects</h1>
+        <section id='projects' className={`projects ${darkMode ? 'homeWrap-dark' : 'homeWrap-light'}`} >
+            <h1 className={`projects-title ${darkMode ? 'title-light' : 'title-dark'}`}>Projects</h1>
             <div className='projects-container'>
                 {Datas.map((project: Project, index: number) => {
                     return (
@@ -30,19 +33,19 @@ const Projects = () => {
                             <div className="project">
                                 <img src={Images[index]} alt="" className="project-img" />
                                 <div className="project-content">
-                                    <h1 className="project-number">0{index + 1}.</h1>
-                                    <h2 className="project-title">{project.title}</h2>
+                                    <h1 className={`project-number ${darkMode ? 'title-light' : 'title-dark'}`}>0{index + 1}.</h1>
+                                    <h2 className={`project-title ${darkMode ? 'title-light' : 'title-dark'}`}>{project.title}</h2>
                                     <p className="project-description">{project.description}</p>
-                                    <a target='_blank' href={project.public ? project.githubLink : undefined} className="project-link"><img src={project.public? ViewMore:ViewPrivate} alt="" className="project-link-img" /></a>
+                                    <a target='_blank' href={project.public ? project.githubLink : undefined} className="project-link"><img src={project.public? darkMode? ViewMore:ViewLight:ViewPrivate} alt="" className="project-link-img" /></a>
                                 </div>
                             </div>
                         ) : (
                             <div className="project">
                                 <div className="project-content">
-                                    <h1 className="project-number">0{index + 1}.</h1>
-                                    <h2 className="project-title">{project.title}</h2>
+                                <h1 className={`project-number ${darkMode ? 'title-light' : 'title-dark'}`}>0{index + 1}.</h1>
+                                    <h2 className={`project-title ${darkMode ? 'title-light' : 'title-dark'}`}>{project.title}</h2>
                                     <p className="project-description">{project.description}</p>
-                                    <a target='_blank' href={project.public ? project.githubLink : undefined} className="project-link"><img src={project.public? ViewMore:ViewPrivate} alt="" className="project-link-img" /></a>
+                                    <a target='_blank' href={project.public ? project.githubLink : undefined} className="project-link"><img src={project.public? darkMode? ViewMore:ViewLight:ViewPrivate} alt="" className="project-link-img" /></a>
                                 </div>
                                 <img src={Images[index]} alt="" className="project-img" />
                             </div>
