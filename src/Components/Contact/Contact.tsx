@@ -12,9 +12,14 @@ import emailjs from '@emailjs/browser'
 import dotenv from 'dotenv'
 
 const Contact = () => {
-    // dotenv.config()
+    const [formOpen, setFormOpen] = useState(true);
     const { darkMode } = useContext(DarkModeContext)
     const formRef = useRef<HTMLFormElement>(null)
+    const defaultFormState = {
+        name: "",
+        email: "",
+        message: "",
+    };
     const [form, setForm] = useState({
         name: "",
         email: "",
@@ -58,12 +63,14 @@ const Contact = () => {
             <form className={`contact-form ${darkMode ? 'contact-form-dark' : 'contact-form-light'}`} onSubmit={handleSubmit} ref={formRef}>
                 <div className="line">
                     <div className="macOS">
-                        <img src={Mac1} alt="mac1" className="mac" onMouseOver={(e) => (e.currentTarget.src = Mac1a)} onMouseOut={(e) => (e.currentTarget.src = Mac1)} />
-                        <img src={Mac2} alt="mac2" className="mac" onMouseOver={(e) => (e.currentTarget.src = Mac2a)} onMouseOut={(e) => (e.currentTarget.src = Mac2)} />
-                        <img src={Mac3} alt="mac3" className="mac" onMouseOver={(e) => (e.currentTarget.src = Mac3a)} onMouseOut={(e) => (e.currentTarget.src = Mac3)} />
+                        <img src={Mac1} alt="mac1" className="mac" onMouseOver={(e) => (e.currentTarget.src = Mac1a)} onMouseOut={(e) => (e.currentTarget.src = Mac1)} onClick={() => setForm(defaultFormState)} />
+                        <img src={Mac2} alt="mac2" className="mac" onMouseOver={(e) => (e.currentTarget.src = Mac2a)} onMouseOut={(e) => (e.currentTarget.src = Mac2)} onClick={() => setFormOpen(false)} />
+                        <img src={Mac3} alt="mac3" className="mac" onMouseOver={(e) => (e.currentTarget.src = Mac3a)} onMouseOut={(e) => (e.currentTarget.src = Mac3)} onClick={() => setFormOpen(true)} />
                     </div>
                     <h2 className={`message-title ${darkMode ? 'title-light' : 'title-dark'}`}>New Message</h2>
                 </div>
+                {formOpen ? (
+                <>
                 <div className="line">
                     <label className={`label ${darkMode ? 'title-light' : 'title-dark'}`}>Name:</label>
                     <input type="text" placeholder="Enter your name please" className={`contact-input ${darkMode ? 'title-light' : 'title-dark'}`} value={form.name} name="name" onChange={handleChange} />
@@ -78,6 +85,8 @@ const Contact = () => {
                 <div className="button-line">
                     <button className={`contact-button ${darkMode ? 'contact-button-dark' : 'contact-button-light'}`} type="submit">Send</button>
                 </div>
+                </>
+                ):("")}
             </form>
         </section>
     )
