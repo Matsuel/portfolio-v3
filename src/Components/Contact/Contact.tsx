@@ -1,6 +1,12 @@
 import React, { useContext, useEffect, useRef, useState } from 'react'
 import './Contact.css'
 import MacOS from '../../assets/macOs.svg'
+import Mac1 from '../../assets/mac1.svg'
+import Mac2 from '../../assets/mac2.svg'
+import Mac3 from '../../assets/mac3.svg'
+import Mac1a from '../../assets/mac1a.svg'
+import Mac2a from '../../assets/mac2a.svg'
+import Mac3a from '../../assets/mac3a.svg'
 import { DarkModeContext } from '../../darkMode'
 import emailjs from '@emailjs/browser'
 import dotenv from 'dotenv'
@@ -51,7 +57,12 @@ const Contact = () => {
             <h1 className={`contact-title ${darkMode ? 'title-light' : 'title-dark'}`}>Contact</h1>
             <form className={`contact-form ${darkMode ? 'contact-form-dark' : 'contact-form-light'}`} onSubmit={handleSubmit} ref={formRef}>
                 <div className="line">
-                    <img src={MacOS} alt="macOS" className="macOS" />
+                    {/* <img src={MacOS} alt="macOS" className="macOS" /> */}
+                    <div className="macOS">
+                        <img src={Mac1} alt="mac1" className="mac" />
+                        <img src={Mac2} alt="mac2" className="mac" />
+                        <img src={Mac3} alt="mac3" className="mac" />
+                    </div>
                     <h2 className={`message-title ${darkMode ? 'title-light' : 'title-dark'}`}>New Message</h2>
                 </div>
                 <div className="line">
@@ -66,8 +77,7 @@ const Contact = () => {
                     <textarea placeholder="Write your message here" className={`contact-input-message ${darkMode ? 'contact-input-message-dark' : 'contact-input-message-light'}`} value={form.message} name="message" onChange={handleChange} />
                 </div>
                 <div className="button-line">
-                    <button className={`contact-button ${darkMode ? 'contact-button-dark' : 'contact-button-light'}`} type="submit"
-                    >Send</button>
+                    <button className={`contact-button ${darkMode ? 'contact-button-dark' : 'contact-button-light'}`} type="submit">Send</button>
                 </div>
             </form>
         </section>
