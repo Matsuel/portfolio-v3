@@ -37,9 +37,16 @@
 
 .navbarLink{
     text-decoration: none;
-    color: #fff;
     font-size: 18px;
     font-weight: 500;
+}
+
+.linkLight{
+    color: #fff;
+}
+
+.linkDark{
+    color: #000;
 }
 
 .navbarReso{

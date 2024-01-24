@@ -17,7 +17,8 @@ const Navbar = () => {
                 <img src={Logo} alt="logo" className="navbarLogo" onClick={() => window.location.href = "/"} />
                 <div className="navbarLinks">
                     {[0, 1, 2, 3].map((index) => (
-                        <a href={linksRef[index]} className="navbarLink">{links[index]}</a>
+                        <a href={linksRef[index]} className={`navbarLink ${darkMode ? "linkLight" : "linkDark"}`}
+                        >{links[index]}</a>
                     ))}
                 </div>
             </div>
