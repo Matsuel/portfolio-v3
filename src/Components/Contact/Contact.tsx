@@ -15,7 +15,7 @@ const Contact = () => {
     const [formOpen, setFormOpen] = useState(true);
     const { darkMode } = useContext(DarkModeContext)
     const formRef = useRef<HTMLFormElement>(null)
-    const [errorText, setErrorText] = useState(false)
+    const [error, setError] = useState(0)
     const [sending, setSending] = useState(false)
     const defaultFormState = {
         name: "",
@@ -52,14 +52,22 @@ const Contact = () => {
             .then(
                 (result) => {
                     setSending(true)
-                    setErrorText(false)
+                    setError(1)
+                    showMessage()
                 },
                 (error) => {
                     setSending(true)
-                    setErrorText(true)
+                    setError(2)
+                    showMessage()
                 }
             );
     };
+
+    const showMessage = () => {
+        setTimeout(() => {
+            setSending(false)
+        }, 8000);
+    }
 
     return (
         <section className={`contact-container ${darkMode ? 'homeWrap-dark' : 'homeWrap-light'}`} id="contact">
@@ -94,9 +102,17 @@ const Contact = () => {
             </form>
             {sending ? (
                 <div className="message-sent">
-                    <video src={require('../../assets/success.webm')} autoPlay loop muted className='video-success' />
+                    {error === 1 ? (
+                        <>
+                        <video src={require('../../assets/success.webm')} autoPlay loop muted className='video-success' />
+                        <h2 className={`message-sent-title `}>Message Sent !</h2>
+                        </>
+                    ) : error === 2 ? (
+                    <>
                     <video src={require('../../assets/error.webm')} autoPlay loop muted className='video-error' />
-                    <h2 className={`message-sent-title`}>Message Sent !</h2>
+                    <h2 className={`message-sent-title`}>Message not sent try again later !</h2>
+                    </>
+                    ):("")}
                 </div>
             ) : (
                 ""
