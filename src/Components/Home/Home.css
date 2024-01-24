@@ -27,13 +27,20 @@
 }
 
 .home-title{
-    color: #fff;
     font-size: 5rem;
     margin-bottom: 5vh;
 }
 
-.home-text{
+.title-light{
     color: #fff;
+}
+
+.title-dark{
+    color: #000;
+}
+
+.home-text{
+    color: #808080;
     font-size: 1.5rem;
     margin-bottom: 10vh;
 }
@@ -48,9 +55,29 @@
     border: 1px solid #fff;
 }
 
+.home-button-light{
+    color: #000;
+    border: 1px solid #000;
+}
+
+.home-button-dark{
+    color: #fff;
+    border: 1px solid #fff;
+}
+
 .home-button:hover{
     cursor: pointer;
+    /* color: #000;
+    background-color: #fff; */
+    transition: 0.3s;
+}
+
+.home-button-light:hover{
+    color: #fff;
+    background-color: #000;
+}
+
+.home-button-dark:hover{
     color: #000;
     background-color: #fff;
-    transition: 0.3s;
 }
