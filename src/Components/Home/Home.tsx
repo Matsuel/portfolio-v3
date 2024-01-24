@@ -6,7 +6,7 @@ import { DarkModeContext } from '../../darkMode'
 const Home = () => {
     const { darkMode } = React.useContext(DarkModeContext)
     return (
-        <div className='homeWrap' id='home'>
+        <div className={`homeWrap ${darkMode ? "homeWrap-dark" : "homeWrap-light"}`} id='home'>
             <div className="home-content">
                 <h1 className={`home-title ${darkMode ? "title-light" : "title-dark"}`}>
                     Hello World!

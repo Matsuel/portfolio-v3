@@ -12,6 +12,14 @@
     border-radius: 35px;
 }
 
+.homeWrap-light{
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.homeWrap-dark{
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
 .logo-home{
     width: 30%;
     height: auto;
