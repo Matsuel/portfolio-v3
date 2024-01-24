@@ -26,7 +26,7 @@ const Navbar = () => {
                 <img src={Github} alt="github" className="navbarResoIcon" onClick={() => window.open("https://github.com/Matsuel", "_blank")} />
                 <img src={Linkedin} alt="linkedin" className="navbarResoIcon" onClick={() => window.open("https://www.linkedin.com/in/math%C3%A9o-lang-146539275/", "_blank")} />
                 <div className="pip-navbar"></div>
-                <img src={darkMode ? Moon : Mode} alt="mode" className="navbarResoIcon" onClick={() => toggleDarkMode()} />
+                <img src={darkMode ? Moon : Mode} alt="mode" className="navbarResoIcon toggleButton" onClick={() => toggleDarkMode()} />
             </div>
         </div>
     )
