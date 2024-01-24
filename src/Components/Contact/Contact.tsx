@@ -40,8 +40,6 @@ const Contact = () => {
     const handleSubmit = (e: { preventDefault: () => void; }) => {
         e.preventDefault();
 
-        console.log(process.env.REACT_APP_SERVICE!, process.env.REACT_APP_TEMPLATE!, process.env.REACT_APP_PUBLIC_KEY!)
-
         emailjs
             .sendForm(
                 process.env.REACT_APP_SERVICE!,
@@ -54,11 +52,13 @@ const Contact = () => {
                     setSending(true)
                     setError(1)
                     showMessage()
+                    setForm(defaultFormState)
                 },
                 (error) => {
                     setSending(true)
                     setError(2)
                     showMessage()
+                    setForm(defaultFormState)
                 }
             );
     };
@@ -66,7 +66,7 @@ const Contact = () => {
     const showMessage = () => {
         setTimeout(() => {
             setSending(false)
-        }, 8000);
+        }, 10000);
     }
 
     return (
