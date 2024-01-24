@@ -1,7 +1,6 @@
 .contact-container{
     width: 70vw;
     height: auto;
-    background-color: rgba(0, 0, 0, 0.2);
     border-radius: 25px;
     display: flex;
     flex-direction: column;
@@ -14,7 +13,6 @@
     text-align: start;
     margin-left: 7vw;
     font-size: 5rem;
-    color: #fff;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     margin-bottom: 3vw;
 }
@@ -26,10 +24,17 @@
     flex-direction: column;
     align-items: center;
     gap: 1vw;
-    background-color: #181818;
     border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     margin-bottom: 3vw;
+}
+
+.contact-form-dark{
+    background-color: #181818;
+}
+
+.contact-form-light{
+    background-color: #F6F6F6;
 }
 
 .line{
@@ -76,7 +81,6 @@
     width: 100%;
     text-align: center;
     font-size: 16px;
-    color: #fff;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
@@ -91,7 +95,6 @@
     text-align: start;
     margin-left: 3vw;
     font-size: 1rem;
-    color: #fff;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
@@ -102,7 +105,6 @@
     border: none;
     outline: none;
     padding-left: 1vw;
-    color: #fff;
     font-size: 1rem;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     margin-left: -3vw;
@@ -111,7 +113,6 @@
 .contact-input-message{
     width: 88.3%;
     height: 30vh;
-    background-color: #000;
     border-radius: 12px;
     border: none;
     outline: none;
@@ -119,10 +120,19 @@
     padding-top: 0.5vw;
     margin-left: 5%;
     margin-bottom: 1vw;
-    color: #fff;
     font-size: 1rem;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     resize: none;
+}
+
+.contact-input-message-dark{
+    background-color: #000;
+    color: #fff;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.contact-input-message-light{
+    background-color: #F3F3F3;
+    color: #000;
 }
 
 .button-line{
@@ -137,9 +147,7 @@
 
 .contact-button{
     all: unset;
-    color: #fff;
     margin-right: 5%;
-    background-color: #000;
     width: 5vw;
     height: 5vh;
     margin-bottom: 4vh;
@@ -148,7 +156,25 @@
     text-align: center;
 }
 
-.contact-button:hover{
+.contact-button-light{
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #000;
+}
+
+.contact-button-light:hover{
+    cursor: pointer;
+    background-color: rgb(0,0,0);
+    color: #fff;
+}
+
+.contact-button-dark{
+    background-color: #000;
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+.contact-button-dark:hover{
     cursor: pointer;
     background-color: rgb(255,255,255);
     color: #000;
