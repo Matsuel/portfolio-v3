@@ -38,29 +38,35 @@ const Contact = () => {
     };
 
     const handleSubmit = (e: { preventDefault: () => void; }) => {
-        e.preventDefault();
-
-        emailjs
-            .sendForm(
-                process.env.REACT_APP_SERVICE!,
-                process.env.REACT_APP_TEMPLATE!,
-                formRef.current!,
-                process.env.REACT_APP_PUBLIC_KEY!
-            )
-            .then(
-                (result) => {
-                    setSending(true)
-                    setError(1)
-                    showMessage()
-                    setForm(defaultFormState)
-                },
-                (error) => {
-                    setSending(true)
-                    setError(2)
-                    showMessage()
-                    setForm(defaultFormState)
-                }
-            );
+        if (form.name === "" || form.email === "" || form.message === "") {
+            setSending(true)
+            setError(3)
+            showMessage()
+            return
+        } else {
+            e.preventDefault();
+            emailjs
+                .sendForm(
+                    process.env.REACT_APP_SERVICE!,
+                    process.env.REACT_APP_TEMPLATE!,
+                    formRef.current!,
+                    process.env.REACT_APP_PUBLIC_KEY!
+                )
+                .then(
+                    (result) => {
+                        setSending(true)
+                        setError(1)
+                        showMessage()
+                        setForm(defaultFormState)
+                    },
+                    (error) => {
+                        setSending(true)
+                        setError(2)
+                        showMessage()
+                        setForm(defaultFormState)
+                    }
+                );
+        }
     };
 
     const showMessage = () => {
@@ -82,37 +88,37 @@ const Contact = () => {
                     <h2 className={`message-title ${darkMode ? 'title-light' : 'title-dark'}`}>New Message</h2>
                 </div>
                 {formOpen ? (
-                <>
-                <div className="line">
-                    <label className={`label ${darkMode ? 'title-light' : 'title-dark'}`}>Name:</label>
-                    <input type="text" placeholder="Enter your name please" className={`contact-input ${darkMode ? 'title-light' : 'title-dark'}`} value={form.name} name="name" onChange={handleChange} />
-                </div>
-                <div className="line">
-                    <label className={`label ${darkMode ? 'title-light' : 'title-dark'}`}>Email:</label>
-                    <input type="email" placeholder="Enter your email please" className={`contact-input ${darkMode ? 'title-light' : 'title-dark'}`} value={form.email} name="email" onChange={handleChange} />
-                </div>
-                <div className="message-line">
-                    <textarea placeholder="Write your message here" className={`contact-input-message ${darkMode ? 'contact-input-message-dark' : 'contact-input-message-light'}`} value={form.message} name="message" onChange={handleChange} />
-                </div>
-                <div className="button-line">
-                    <button className={`contact-button ${darkMode ? 'contact-button-dark' : 'contact-button-light'}`} type="submit">Send</button>
-                </div>
-                </>
-                ):("")}
+                    <>
+                        <div className="line">
+                            <label className={`label ${darkMode ? 'title-light' : 'title-dark'}`}>Name:</label>
+                            <input type="text" placeholder="Enter your name please" className={`contact-input ${darkMode ? 'title-light' : 'title-dark'}`} value={form.name} name="name" onChange={handleChange} />
+                        </div>
+                        <div className="line">
+                            <label className={`label ${darkMode ? 'title-light' : 'title-dark'}`}>Email:</label>
+                            <input type="email" placeholder="Enter your email please" className={`contact-input ${darkMode ? 'title-light' : 'title-dark'}`} value={form.email} name="email" onChange={handleChange} />
+                        </div>
+                        <div className="message-line">
+                            <textarea placeholder="Write your message here" className={`contact-input-message ${darkMode ? 'contact-input-message-dark' : 'contact-input-message-light'}`} value={form.message} name="message" onChange={handleChange} />
+                        </div>
+                        <div className="button-line">
+                            <button className={`contact-button ${darkMode ? 'contact-button-dark' : 'contact-button-light'}`} type="submit">Send</button>
+                        </div>
+                    </>
+                ) : ("")}
             </form>
             {sending ? (
                 <div className="message-sent">
                     {error === 1 ? (
                         <>
-                        <video src={require('../../assets/success.webm')} autoPlay loop muted className='video-success' />
-                        <h2 className={`message-sent-title `}>Message Sent !</h2>
+                            <video src={require('../../assets/success.webm')} autoPlay loop muted className='video-success' />
+                            <h2 className={`message-sent-title `}>Message Sent !</h2>
                         </>
-                    ) : error === 2 ? (
-                    <>
-                    <video src={require('../../assets/error.webm')} autoPlay loop muted className='video-error' />
-                    <h2 className={`message-sent-title`}>Message not sent try again later !</h2>
-                    </>
-                    ):("")}
+                    ) : (
+                        <>
+                            <video src={require('../../assets/error.webm')} autoPlay loop muted className='video-error' />
+                            <h2 className={`message-sent-title`}>{error === 3 ? "Please fill all the fields !" : "Message not sent try again later !"}</h2>
+                        </>
+                    )}
                 </div>
             ) : (
                 ""
