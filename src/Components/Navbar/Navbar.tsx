@@ -1,15 +1,16 @@
-import React, { useState } from 'react'
+import React, { useState,useContext } from 'react'
 import "./Navbar.css"
 import Logo from '../../assets/logo.png'
 import Github from '../../assets/github.svg'
 import Linkedin from '../../assets/linkedin.svg'
 import Mode from '../../assets/mode.svg'
 import Moon from '../../assets/moon.svg'
+import { DarkModeContext } from '../../darkMode'
 
 const Navbar = () => {
     const links = ["Home", "Skills", "Projects", "Contact"]
     const linksRef = ["#home", "#skills", "#projects", "#contact"]
-    const [mode, setMode] = useState(false)
+    const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
     return (
         <div className="navbarWrap">
             <div className="navBarLeft">
@@ -24,7 +25,7 @@ const Navbar = () => {
                 <img src={Github} alt="github" className="navbarResoIcon" onClick={() => window.open("https://github.com/Matsuel", "_blank")} />
                 <img src={Linkedin} alt="linkedin" className="navbarResoIcon" onClick={() => window.open("https://www.linkedin.com/in/math%C3%A9o-lang-146539275/", "_blank")} />
                 <div className="pip-navbar"></div>
-                <img src={mode ? Moon : Mode} alt="mode" className="navbarResoIcon" onClick={() => setMode(!mode)} />
+                <img src={darkMode ? Moon : Mode} alt="mode" className="navbarResoIcon" onClick={() => toggleDarkMode()} />
             </div>
         </div>
     )
