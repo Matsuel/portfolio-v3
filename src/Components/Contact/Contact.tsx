@@ -15,6 +15,8 @@ const Contact = () => {
     const [formOpen, setFormOpen] = useState(true);
     const { darkMode } = useContext(DarkModeContext)
     const formRef = useRef<HTMLFormElement>(null)
+    const [errorText, setErrorText] = useState(false)
+    const [sending, setSending] = useState(false)
     const defaultFormState = {
         name: "",
         email: "",
@@ -49,10 +51,12 @@ const Contact = () => {
             )
             .then(
                 (result) => {
-                    console.log(result.text);
+                    setSending(true)
+                    setErrorText(false)
                 },
                 (error) => {
-                    console.log(error.text);
+                    setSending(true)
+                    setErrorText(true)
                 }
             );
     };
@@ -88,6 +92,15 @@ const Contact = () => {
                 </>
                 ):("")}
             </form>
+            {sending ? (
+                <div className="message-sent">
+                    <video src={require('../../assets/success.webm')} autoPlay loop muted className='video-success' />
+                    <video src={require('../../assets/error.webm')} autoPlay loop muted className='video-error' />
+                    <h2 className={`message-sent-title`}>Message Sent !</h2>
+                </div>
+            ) : (
+                ""
+            )}
         </section>
     )
 }
