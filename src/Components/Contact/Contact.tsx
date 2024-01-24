@@ -57,7 +57,6 @@ const Contact = () => {
             <h1 className={`contact-title ${darkMode ? 'title-light' : 'title-dark'}`}>Contact</h1>
             <form className={`contact-form ${darkMode ? 'contact-form-dark' : 'contact-form-light'}`} onSubmit={handleSubmit} ref={formRef}>
                 <div className="line">
-                    {/* <img src={MacOS} alt="macOS" className="macOS" /> */}
                     <div className="macOS">
                         <img src={Mac1} alt="mac1" className="mac" />
                         <img src={Mac2} alt="mac2" className="mac" />
