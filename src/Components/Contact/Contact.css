@@ -38,8 +38,17 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    /* justify-content: space-evenly; */
     position: relative;
+}
+
+.line:first-of-type::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    bottom: 0;
+    left: 0;
 }
 
 .line::after{
@@ -73,8 +82,8 @@
 
 .macOS{
     align-self: self-start;
-    margin-left: 3vw;
-    margin-top: 1vw;
+    margin-left: 1vw;
+    margin-top: 0.6vw;
 }
 
 .label{
