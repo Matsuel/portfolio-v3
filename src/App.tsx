@@ -9,6 +9,7 @@ import Skills from './Components/Skills/Skills';
 import Projects from './Components/Projects/Projects';
 import Contact from './Components/Contact/Contact';
 import { DarkModeContext } from './darkMode';
+import dotenv from 'dotenv';
 
 function App() {
   const [darkMode, setDarkMode] = useState<boolean>(true);
