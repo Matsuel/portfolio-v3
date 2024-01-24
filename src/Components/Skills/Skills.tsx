@@ -2,8 +2,10 @@ import React from 'react'
 import "./Skills.css"
 import randomizeList from '../../Functions/RandomList'
 import capitalizeList from '../../Functions/CapitalizeList'
+import { DarkModeContext } from '../../darkMode'
 
 const Skills = () => {
+    const { darkMode } = React.useContext(DarkModeContext)
     const skillsTypes = ['Language', 'Framework', 'Software', 'Database', 'OS', 'Code editor', 'Versioning', 'Styling', 'Other']
     const images = require.context('../../assets/skillsAssets', true);
     const imagesList = randomizeList(images.keys().map((image) => images(image)));
@@ -23,14 +25,15 @@ const Skills = () => {
     console.log(skillsTypesList)
     
     return (
-        <section className='skillsWrap' id='skills'>
-            <h1 className="skills-title">Skills</h1>
+        <section className={`skillsWrap ${darkMode ? "homeWrap-dark" : "homeWrap-light"}`} id='skills'>
+            <h1 className={`skills-title ${darkMode ? "title-light" : "title-dark"}`} >Skills</h1>
             {imagesList.map((image, index:number) => {
                 return (
-                    <div className='skill-image' key={index}>
+                    <div className={`skill-image ${darkMode ? "skill-image-dark" : "skill-image-light"}`} key={index}>
                         <img src={image} alt='skill-image' />
-                        <p className='skill-name'>{imageNames[index]}</p>
-                        <p className='skill-type'>{skillsTypes[parseInt(skillsTypesList[index])-1]}</p>
+                        <p className={`skill-name ${darkMode ? "skill-name-light" : "skill-name-dark"}`}>{imageNames[index]}</p>
+                        <p className={`skill-type ${darkMode ? "skill-type-light" : "skill-type-dark"}`}
+                        >{skillsTypes[parseInt(skillsTypesList[index])-1]}</p>
                     </div>
                 )
             })}
