@@ -6,6 +6,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 15vh;
 }
 
 .contact-title{
@@ -20,43 +21,52 @@
 
 .contact-form{
     width: 90%;
-    height: 50vh;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* justify-content: center; */
     gap: 1vw;
-    background-color: #000;
+    background-color: #181818;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 3vw;
 }
 
 .line{
     width: 100%;
-    height: 10vh;
+    height: 5vh;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
-    gap: 1vw;
+    /* justify-content: space-evenly; */
+    position: relative;
+}
+
+.line::after{
+    content: "";
+    position: absolute;
+    width: 90%;
+    height: 1px;
+    left: 5%;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    bottom: 0;
 }
 
 .message-line{
     width: 100%;
-    height: 20vh;
+    height: auto;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     gap: 1vw;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 
 }
 
 .message-title{
     width: 100%;
     text-align: center;
-    margin-left: 7vw;
-    font-size: 1rem;
+    font-size: 16px;
     color: #fff;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
@@ -64,6 +74,7 @@
 .macOS{
     align-self: self-start;
     margin-left: 3vw;
+    margin-top: 1vw;
 }
 
 .label{
@@ -76,27 +87,30 @@
 }
 
 .contact-input{
-    width: 90%;
+    width: 83.2%;
     height: 5vh;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 25px;
+    background-color: transparent;
     border: none;
     outline: none;
     padding-left: 1vw;
     color: #fff;
     font-size: 1rem;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-left: -3vw;
 }
 
 .contact-input-message{
     width: 90%;
     height: 20vh;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: #000;
     border-radius: 25px;
     border: none;
     outline: none;
     padding-left: 1vw;
+    margin-left: 9.5vw;
+    margin-bottom: 1vw;
     color: #fff;
     font-size: 1rem;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    resize: none;
 }

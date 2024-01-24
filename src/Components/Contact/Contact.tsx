@@ -12,21 +12,17 @@ const Contact = () => {
                     <h2 className="message-title">New Message</h2>
                 </div>
                 <div className="line">
-                    <label className='label'>Name</label>
-                    <input type="text" placeholder="Name" className="contact-input" />
+                    <label className='label'>Name:</label>
+                    <input type="text" placeholder="Enter your name please" className="contact-input" />
                 </div>
                 <div className="line">
-                    <label className='label'>Email</label>
-                    <input type="email" placeholder="Email" className="contact-input" />
+                    <label className='label'>Email:</label>
+                    <input type="email" placeholder="Enter your email please" className="contact-input" />
                 </div>
                 <div className="message-line">
-                    <textarea placeholder="Message" className="contact-input-message" />
+                    <textarea placeholder="Write your message here" className="contact-input-message" />
                 </div>
-                
-
-
             </div>
-
         </section>
     )
 }
