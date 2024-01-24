@@ -6,7 +6,7 @@ const Contact = () => {
     return (
         <section className="contact-container" id="contact">
             <h1 className="contact-title">Contact</h1>
-            <div className="contact-form">
+            <form className="contact-form" action='/'>
                 <div className="line">
                     <img src={MacOS} alt="macOS" className="macOS" />
                     <h2 className="message-title">New Message</h2>
@@ -25,7 +25,7 @@ const Contact = () => {
                 <div className="button-line">
                     <button className="contact-button">Send</button>
                 </div>
-            </div>
+            </form>
         </section>
     )
 }
