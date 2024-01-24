@@ -38,13 +38,13 @@ const Contact = () => {
     };
 
     const handleSubmit = (e: { preventDefault: () => void; }) => {
+        e.preventDefault();
         if (form.name === "" || form.email === "" || form.message === "") {
             setSending(true)
             setError(3)
             showMessage()
             return
         } else {
-            e.preventDefault();
             emailjs
                 .sendForm(
                     process.env.REACT_APP_SERVICE!,
