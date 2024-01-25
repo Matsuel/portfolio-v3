@@ -2,9 +2,14 @@ import React from 'react'
 import "./Home.css"
 import Logo from "../../assets/logo-high.png"
 import { DarkModeContext } from '../../darkMode'
+import { useParallax } from 'react-scroll-parallax'
 
 const Home = () => {
     const { darkMode } = React.useContext(DarkModeContext)
+    const opacity = useParallax<HTMLImageElement>({
+        opacity: [5, -1],
+    })
+
     return (
         <div className={`homeWrap ${darkMode ? "homeWrap-dark" : "homeWrap-light"}`} id='home'>
             <div className="home-content">
@@ -17,7 +22,7 @@ const Home = () => {
                 <a className={`home-button ${darkMode ? "home-button-dark" : "home-button-light"} `} href="#contact">Contact me</a>
             </div>
             <div className="logo-home">
-                <img src={Logo} alt="Logo" className='logo-image' />
+                <img src={Logo} alt="Logo" className='logo-image' ref={opacity.ref} />
             </div>
         </div>
     )
