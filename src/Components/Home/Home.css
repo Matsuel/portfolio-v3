@@ -7,7 +7,6 @@
     min-height: 50vh;
     height: auto;
     margin-top: 15vh;
-    height: auto;
     border-radius: 35px;
 }
 
@@ -33,6 +32,8 @@
 
 .home-content{
     width: 60%;
+    height: 100%;
+    margin-bottom: 5vh;
 }
 
 .home-title{
@@ -115,5 +116,19 @@
     .homeWrap{
         width: 90%;
     }
+}
 
+@media screen and (max-width: 480px){
+    .home-title{
+        font-size: 3rem;
+    }
+
+    .home-text{
+        font-size: 1rem;
+    }
+
+    .home-button{
+        width: 20%;
+    }
+    
 }
