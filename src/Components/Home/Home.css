@@ -97,12 +97,23 @@
 
 @media screen and (max-width: 768px){
     .homeWrap{
-        flex-direction: column;   
+        flex-direction: column; 
     }
 
     .logo-home{
         width: 50%;
         height: auto;
         margin-top: 10vh;
+        margin-bottom: 10vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
+}
+
+@media screen and (max-width: 600px){
+    .homeWrap{
+        width: 90%;
+    }
+
 }
