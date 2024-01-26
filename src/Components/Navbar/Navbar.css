@@ -72,5 +72,14 @@
 .pip-navbar{
     width: 2px;
     height: 24px;
+}
+
+.pip-navbar-light{
     background-color: rgba(255, 255, 255, 0.25);
+    transition: background-color 0.6s;
+}
+
+.pip-navbar-dark{
+    background-color: rgba(0, 0, 0, 0.25);
+    transition: background-color 0.6s;
 }
