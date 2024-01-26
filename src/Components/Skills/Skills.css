@@ -36,13 +36,15 @@
 }
 
 .skill-image-light{
-    background: rgba(243, 243, 243, 1);
+    background-color: rgba(243, 243, 243, 1);
     box-shadow: inset 9.91px 9.91px 15px #e9e9e9, inset -9.91px -9.91px 15px #e5e5e5;
+    transition: background-color 0.6s,box-shadow 0.6s;
 }
 
 .skill-image-dark{
-    background: rgba(24, 24, 24, 0.8);
+    background-color: rgba(24, 24, 24, 0.8);
     box-shadow: inset 9.91px 9.91px 15px #161616, inset -9.91px -9.91px 15px #1A1A1A;
+    transition: background-color 0.6s, box-shadow 0.6s;
 }
 
 .skill-image img{
@@ -58,7 +60,6 @@
 .skill-name{
     position: absolute;
     font-size: 14px;
-    color: #fff;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     bottom: -2px;
     left: 20px;
@@ -66,10 +67,12 @@
 
 .skill-name-dark{
     color: #000;
+    transition: color 0.6s;
 }
 
 .skill-name-light{
     color: #fff;
+    transition: color 0.6s;
 }
 
 .skill-type{
@@ -85,9 +88,11 @@
 .skill-type-light{
     color: #808080;
     border: 1px solid #808080;
+    transition: color 0.6s,border 0.6s;
 }
 
 .skill-type-dark{
     color: #7F7F7F;
     border: 1px solid #7F7F7F;
+    transition: color 0.6s, border 0.6s;
 }
