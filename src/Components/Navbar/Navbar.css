@@ -1,5 +1,5 @@
 .navbarWrap{
-    width: 66%;
+    width: 70%;
     height: 60px;
     top: 32px;
     position: fixed;
@@ -23,7 +23,7 @@
 }
 
 .navBarLeft{
-    width: 70%;
+    width: 60%;
     height: 100%;
     display: flex;
     align-items: center;
@@ -82,4 +82,32 @@
 .pip-navbar-dark{
     background-color: rgba(0, 0, 0, 0.25);
     transition: background-color 0.6s;
+}
+
+@media screen and (max-width: 1500px){
+    .navbarReso{
+        width: 15%;
+    }
+    
+}
+
+@media screen and (max-width: 1200px){
+    .navbarWrap{
+        justify-content: space-around;    
+    }
+
+    .navbarLink{
+        font-size: 14px;
+    }
+
+    .navBarLeft{
+        width: 75%;
+    }
+
+    .navbarReso{
+        width: 25%;
+    }
+}
+
+@media  screen and (max-width: 800px){
 }

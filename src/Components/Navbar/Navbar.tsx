@@ -60,3 +60,5 @@ const Navbar = () => {
 }
 
 export default Navbar
+
+// Faire une nabar pour mobile qui serait en bas par défaut avec des icones et qui s'ouvre en haut avec les liens
