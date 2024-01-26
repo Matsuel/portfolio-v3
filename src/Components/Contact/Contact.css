@@ -15,7 +15,7 @@
     margin-left: 7vw;
     font-size: 5rem;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    margin-bottom: 3vw;
+    margin-bottom: 7vh;
 }
 
 .contact-form{
@@ -89,12 +89,12 @@
 
 .macOS{
     align-self: self-start;
-    margin-left: 1vw;
-    margin-top: 0.8vw;
+    margin-left: 1.7vh;
+    margin-top: 1.7vh;
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 0.5vw;
+    gap: 5px;
 }
 
 .mac {
@@ -157,13 +157,13 @@
     flex-direction: row;
     align-items: center;
     justify-content: end;
-    gap: 1vw;
+    margin-top: 3vh;
 }
 
 .contact-button{
     all: unset;
     margin-right: 5%;
-    width: 5vw;
+    width: 70px;
     height: 5vh;
     margin-bottom: 4vh;
     border-radius: 9px;
@@ -201,7 +201,7 @@
 
 .message-sent{
     position: absolute;
-    top: 150px;
+    top: 170px;
     width: auto;
     height: 5vh;
     z-index: 99;
@@ -219,7 +219,6 @@
     font-size: 1rem;
     margin-left: 1vw;
     color: #fff;
-
 }
 
 .video-error{
@@ -232,10 +231,37 @@
     height: 25px;
 }
 
+@media screen and (max-width: 1125px){
+    .line{
+        width: 100%;
+        height: 5vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .button-line{
+        height: 10vh;
+    }
+}
+
 @media screen and (max-width: 600px) {
     .contact-container {
         width: 90vw;
         height: auto;
         margin-bottom: 10vh;
     }
+
+    .contact-input{
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width: 480px){
+    .contact-input{
+        width: 75%;
+        margin-right: 5%;
+    }
+    
 }
