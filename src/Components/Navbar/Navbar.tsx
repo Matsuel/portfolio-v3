@@ -74,10 +74,10 @@ const Navbar = () => {
                 </div>
             </div>
             <div className="navbarLittle">
-                <img src={Contact} alt="contact" className="navbarLittleIcon" onClick={() => window.location.href = "#contact"} />
                 <img src={Home} alt="home" className="navbarLittleIcon" onClick={() => window.location.href = "#home"} />
-                <img src={Projects} alt="projects" className="navbarLittleIcon" onClick={() => window.location.href = "#projects"} />
                 <img src={User} alt="user" className="navbarLittleIcon" onClick={() => window.location.href = "#skills"} />
+                <img src={Projects} alt="projects" className="navbarLittleIcon" onClick={() => window.location.href = "#projects"} />
+                <img src={Contact} alt="contact" className="navbarLittleIcon" onClick={() => window.location.href = "#contact"} />
                 <img src={openDropdown? MenuUp: MenuDown} alt="menu" className="navbarLittleIcon menu" onClick={() => handleOpenDropdown()} />
             </div>
         </>
