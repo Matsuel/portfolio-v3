@@ -101,10 +101,10 @@ const Navbar = () => {
                 </div>
             </div>
             <div className="navbarLittle">
-                <img src={active === 0 ? HomeFullWhite : Home} alt="home" className={`navbarLittleIcon ${active === 0 ? "iconActive" : ""}`} onClick={() => handleActive(0)} />
-                <img src={active === 1 ? UserFullWhite : User} alt="user" className={`navbarLittleIcon ${active === 1 ? "iconActive" : ""}`} onClick={() => handleActive(1)} />
-                <img src={active === 2 ? ProjectsFullWhite : Projects} alt="projects" className={`navbarLittleIcon ${active === 2 ? "iconActive" : ""}`} onClick={() => handleActive(2)} />
-                <img src={active === 3 ? ContactFullWhite : Contact} alt="contact" className={`navbarLittleIcon ${active === 3 ? "iconActive" : ""}`} onClick={() => handleActive(3)} />
+                <img src={active === 0 ? (darkMode ? HomeFullWhite : HomeFull) : (darkMode ? Home : HomeWhite)} alt="home" className={`navbarLittleIcon ${active === 0 ? (darkMode ? "iconActive-dark" : "iconActive-light") : ""}`} onClick={() => handleActive(0)} />
+                <img src={active === 1 ? (darkMode ? UserFullWhite : UserFull) : (darkMode ? User : UserWhite) } alt="user" className={`navbarLittleIcon ${active === 1 ? (darkMode ? "iconActive-dark" : "iconActive-light") : ""}`} onClick={() => handleActive(1)} />
+                <img src={active === 2 ? (darkMode ? ProjectsFullWhite : ProjectsFull) : (darkMode ? Projects : ProjectsWhite)} alt="projects" className={`navbarLittleIcon ${active === 2 ? (darkMode ? "iconActive-dark" : "iconActive-light") : ""}`} onClick={() => handleActive(2)} />
+                <img src={active === 3 ? (darkMode ? ContactFullWhite : ContactFull) : (darkMode ? Contact : ContactWhite)} alt="contact" className={`navbarLittleIcon ${active === 3 ? (darkMode ? "iconActive-dark" : "iconActive-light") : ""}`} onClick={() => handleActive(3)} />
                 <img src={openDropdown? MenuUp: MenuDown} alt="menu" className="navbarLittleIcon menu" onClick={() => handleOpenDropdown()} />
             </div>
         </>

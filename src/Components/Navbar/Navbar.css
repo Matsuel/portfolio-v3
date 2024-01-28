@@ -132,9 +132,14 @@
         z-index: 100;
     }
 
-    .iconActive{
-        background-color: rgba(0, 0, 0, 0.8);
+    .iconActive-light{
         border-radius: 9px;
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+
+    .iconActive-dark{
+        border-radius: 9px;
+        background-color: rgba(0, 0, 0, 0.8);
     }
 
     .navbarLittleIcon{
