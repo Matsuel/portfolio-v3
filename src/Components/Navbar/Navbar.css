@@ -155,7 +155,7 @@
     .dropdown{
         position: fixed;
         width: 30%;
-        height: 5%;
+        height: 5vh;
         bottom: 62px;
         right: 0;
         background-color: transparent;
@@ -164,4 +164,11 @@
         justify-content: space-around;
         align-items: center;
     }
+}
+
+@media screen and (max-width: 400px) {
+    .dropdown{
+        width: 40%;
+    }
+    
 }
