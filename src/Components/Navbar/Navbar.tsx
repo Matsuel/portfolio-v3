@@ -62,16 +62,16 @@ const Navbar = () => {
     }
 
     const handleActive = (index: number) => {
-        if(index === 0){
+        if (index === 0) {
             setActive(0)
             window.location.href = "#home"
-        }else if(index === 1){
+        } else if (index === 1) {
             setActive(1)
             window.location.href = "#skills"
-        }else if(index === 2){
+        } else if (index === 2) {
             setActive(2)
             window.location.href = "#projects"
-        }else if(index === 3){
+        } else if (index === 3) {
             setActive(3)
             window.location.href = "#contact"
         }
@@ -102,11 +102,24 @@ const Navbar = () => {
             </div>
             <div className="navbarLittle">
                 <img src={active === 0 ? (darkMode ? HomeFullWhite : HomeFull) : (darkMode ? Home : HomeWhite)} alt="home" className={`navbarLittleIcon ${active === 0 ? (darkMode ? "iconActive-dark" : "iconActive-light") : ""}`} onClick={() => handleActive(0)} />
-                <img src={active === 1 ? (darkMode ? UserFullWhite : UserFull) : (darkMode ? User : UserWhite) } alt="user" className={`navbarLittleIcon ${active === 1 ? (darkMode ? "iconActive-dark" : "iconActive-light") : ""}`} onClick={() => handleActive(1)} />
+                <img src={active === 1 ? (darkMode ? UserFullWhite : UserFull) : (darkMode ? User : UserWhite)} alt="user" className={`navbarLittleIcon ${active === 1 ? (darkMode ? "iconActive-dark" : "iconActive-light") : ""}`} onClick={() => handleActive(1)} />
                 <img src={active === 2 ? (darkMode ? ProjectsFullWhite : ProjectsFull) : (darkMode ? Projects : ProjectsWhite)} alt="projects" className={`navbarLittleIcon ${active === 2 ? (darkMode ? "iconActive-dark" : "iconActive-light") : ""}`} onClick={() => handleActive(2)} />
                 <img src={active === 3 ? (darkMode ? ContactFullWhite : ContactFull) : (darkMode ? Contact : ContactWhite)} alt="contact" className={`navbarLittleIcon ${active === 3 ? (darkMode ? "iconActive-dark" : "iconActive-light") : ""}`} onClick={() => handleActive(3)} />
-                <img src={openDropdown? MenuUp: MenuDown} alt="menu" className="navbarLittleIcon menu" onClick={() => handleOpenDropdown()} />
+                <img src={openDropdown ? MenuUp : MenuDown} alt="menu" className="navbarLittleIcon menu" onClick={() => handleOpenDropdown()} />
+
+
             </div>
+            {openDropdown ? (
+                <div className="dropdown">
+                    <img src={darkMode ? GithubBlack : Github } alt="github" className="navbarResoIcon" onClick={() => window.open("https://github.com/Matsuel", "_blank")} />
+                    <img src={darkMode ? LindedinBlack : Linkedin} alt="linkedin" className="navbarResoIcon" onClick={() => window.open("https://www.linkedin.com/in/math%C3%A9o-lang-146539275/", "_blank")} />
+                    <div className={`pip-navbar ${darkMode ? "pip-navbar-light" : "pip-navbar-dark"}`}
+                    ></div>
+                    <img src={langue === 0 ? Uk : Fr} alt="fr" className="navbarResoIcon" onClick={() => handleLangue()} />
+                    <img src={darkMode ? Moon : Mode} alt="mode" className="navbarResoIcon toggleButton" onClick={() => toggleDarkMode()} />
+                </div>
+
+            ) : null}
         </>
     )
 }
