@@ -135,11 +135,13 @@
     .iconActive-light{
         border-radius: 9px;
         background-color: rgba(255, 255, 255, 0.8);
+        transition: background-color 0.6s;
     }
 
     .iconActive-dark{
         border-radius: 9px;
         background-color: rgba(0, 0, 0, 0.8);
+        transition: background-color 0.6s;
     }
 
     .navbarLittleIcon{
