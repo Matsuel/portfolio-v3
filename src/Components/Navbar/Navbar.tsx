@@ -21,6 +21,15 @@ import UserFull from '../../assets/navbar/userFull.svg'
 import MenuUp from '../../assets/navbar/menuUp.svg'
 import MenuDown from '../../assets/navbar/menuDown.svg'
 
+import HomeWhite from '../../assets/navbar/homeWhite.svg'
+import HomeFullWhite from '../../assets/navbar/homeFullWhite.svg'
+import ProjectsWhite from '../../assets/navbar/projectWhite.svg'
+import ProjectsFullWhite from '../../assets/navbar/projectFullWhite.svg'
+import UserWhite from '../../assets/navbar/userWhite.svg'
+import UserFullWhite from '../../assets/navbar/userFullWhite.svg'
+import ContactWhite from '../../assets/navbar/contactWhite.svg'
+import ContactFullWhite from '../../assets/navbar/contactFullWhite.svg'
+
 const Navbar = () => {
     const [langue, setLangue] = useState(0)
     const links = ["Home", "Skills", "Projects", "Contact"]
@@ -28,6 +37,7 @@ const Navbar = () => {
     const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
     const navRef = useRef<HTMLDivElement>(null);
     const [openDropdown, setOpenDropdown] = useState<boolean>(false)
+    const [active, setActive] = useState<number>(0)
 
     window.onwheel = (e) => {
         if (e.deltaY > 0) {
@@ -50,6 +60,23 @@ const Navbar = () => {
     const handleOpenDropdown = () => {
         setOpenDropdown(!openDropdown)
     }
+
+    const handleActive = (index: number) => {
+        if(index === 0){
+            setActive(0)
+            window.location.href = "#home"
+        }else if(index === 1){
+            setActive(1)
+            window.location.href = "#skills"
+        }else if(index === 2){
+            setActive(2)
+            window.location.href = "#projects"
+        }else if(index === 3){
+            setActive(3)
+            window.location.href = "#contact"
+        }
+    }
+
 
 
     return (
@@ -74,10 +101,10 @@ const Navbar = () => {
                 </div>
             </div>
             <div className="navbarLittle">
-                <img src={Home} alt="home" className="navbarLittleIcon" onClick={() => window.location.href = "#home"} />
-                <img src={User} alt="user" className="navbarLittleIcon" onClick={() => window.location.href = "#skills"} />
-                <img src={Projects} alt="projects" className="navbarLittleIcon" onClick={() => window.location.href = "#projects"} />
-                <img src={Contact} alt="contact" className="navbarLittleIcon" onClick={() => window.location.href = "#contact"} />
+                <img src={active === 0 ? HomeFullWhite : Home} alt="home" className={`navbarLittleIcon ${active === 0 ? "iconActive" : ""}`} onClick={() => handleActive(0)} />
+                <img src={active === 1 ? UserFullWhite : User} alt="user" className={`navbarLittleIcon ${active === 1 ? "iconActive" : ""}`} onClick={() => handleActive(1)} />
+                <img src={active === 2 ? ProjectsFullWhite : Projects} alt="projects" className={`navbarLittleIcon ${active === 2 ? "iconActive" : ""}`} onClick={() => handleActive(2)} />
+                <img src={active === 3 ? ContactFullWhite : Contact} alt="contact" className={`navbarLittleIcon ${active === 3 ? "iconActive" : ""}`} onClick={() => handleActive(3)} />
                 <img src={openDropdown? MenuUp: MenuDown} alt="menu" className="navbarLittleIcon menu" onClick={() => handleOpenDropdown()} />
             </div>
         </>

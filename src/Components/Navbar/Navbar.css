@@ -132,8 +132,16 @@
         z-index: 100;
     }
 
+    .iconActive{
+        background-color: rgba(0, 0, 0, 0.8);
+        border-radius: 9px;
+    }
+
     .navbarLittleIcon{
         width: 30px;
         height: 30px;
+        padding: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
     }
 }
