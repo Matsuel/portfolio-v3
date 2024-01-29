@@ -88,11 +88,14 @@
     transition: background-color 0.6s;
 }
 
+.dropdown{
+    display: none;
+}
+
 @media screen and (max-width: 1500px){
     .navbarReso{
         width: 15%;
-    }
-    
+    }    
 }
 
 @media screen and (max-width: 1200px){
@@ -110,10 +113,6 @@
 
     .navbarReso{
         width: 25%;
-    }
-
-    .dropdown{
-        display: none;
     }
 }
 
