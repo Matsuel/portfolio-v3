@@ -21,6 +21,8 @@ import User from '../../assets/navbar/user.svg'
 import UserFull from '../../assets/navbar/userFull.svg'
 import MenuUp from '../../assets/navbar/menuUp.svg'
 import MenuDown from '../../assets/navbar/menuDown.svg'
+import MenuWhite from '../../assets/navbar/menuWhite.svg'
+import MenuUpWhite from '../../assets/navbar/menuUpWhite.svg'
 
 import Github from '../../assets/github.svg'
 import GithubBlack from '../../assets/githubBlack.svg'
@@ -73,7 +75,8 @@ const NavbarLittleScreen = () => {
                 <img src={active === 1 ? (darkMode ? UserFullWhite : UserFull) : (darkMode ? User : UserWhite)} alt="user" className={`navbarLittleIcon ${active === 1 ? (darkMode ? "iconActive-dark" : "iconActive-light") : ""}`} onClick={() => handleActive(1)} />
                 <img src={active === 2 ? (darkMode ? ProjectsFullWhite : ProjectsFull) : (darkMode ? Projects : ProjectsWhite)} alt="projects" className={`navbarLittleIcon ${active === 2 ? (darkMode ? "iconActive-dark" : "iconActive-light") : ""}`} onClick={() => handleActive(2)} />
                 <img src={active === 3 ? (darkMode ? ContactFullWhite : ContactFull) : (darkMode ? Contact : ContactWhite)} alt="contact" className={`navbarLittleIcon ${active === 3 ? (darkMode ? "iconActive-dark" : "iconActive-light") : ""}`} onClick={() => handleActive(3)} />
-                <img src={openDropdown ? MenuUp : MenuDown} alt="menu" className="navbarLittleIcon menu" onClick={() => handleOpenDropdown()} />
+                <img src={openDropdown ? (darkMode ? MenuUp : MenuUpWhite ) : (darkMode ? MenuDown : MenuWhite)}
+                alt="menu" className="navbarLittleIcon menu" onClick={() => handleOpenDropdown()} />
             </div>
             {openDropdown ? (
                 <div className="dropdown">

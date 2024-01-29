@@ -111,6 +111,10 @@
     .navbarReso{
         width: 25%;
     }
+
+    .dropdown{
+        display: none;
+    }
 }
 
 @media  screen and (max-width: 800px){
