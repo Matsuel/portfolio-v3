@@ -48,6 +48,12 @@ export const Datas = [
         public: true
     },
     {
+        title:"Hangman Classic",
+        githubLink:"https://github.com/Matsuel/hangman-classic",
+        description:"Hangman game CLI made with golang it's our first project at school",
+        public: true
+    },
+    {
         title:"Ecommerce (soon)",
         githubLink:"",
         description:"Ecommerce made with PHP Symfony, MySQL for final module project",
