@@ -42,7 +42,7 @@ export const Datas = [
         public: true
     },
     {
-        title: "Hangaman",
+        title: "Hangman",
         githubLink:"https://github.com/Matsuel/hangman-web",
         description: 'Hangman game made with Golang and HTML/CSS',
         public: true
