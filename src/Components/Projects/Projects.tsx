@@ -4,6 +4,7 @@ import { Datas } from './datas'
 import AppMeteoMobile from '../../assets/projects/wheathermobile.png'
 import AppMeteo from '../../assets/projects/app meteo csharp.png'
 import Calc from '../../assets/projects/csharp calc.png'
+import HangmanWeb from '../../assets/projects/hangman-web.png'
 import LeRebot from '../../assets/projects/lerobot.png'
 import Portfolio from '../../assets/projects/portfolio v2.png'
 import Taquin from '../../assets/projects/taquin.png'
@@ -22,7 +23,7 @@ interface Project {
 
 const Projects = () => {
     const { darkMode } = useContext(DarkModeContext)
-    const Images = [Portfolio, Whatsapp, AppMeteoMobile, LeRebot, Calc, Taquin, AppMeteo]
+    const Images = [Portfolio, Whatsapp, AppMeteoMobile, LeRebot, Calc, Taquin, AppMeteo, HangmanWeb]
     return (
         <section id='projects' className={`projects ${darkMode ? 'homeWrap-dark' : 'homeWrap-light'}`} >
             <h1 className={`projects-title ${darkMode ? 'title-light' : 'title-dark'}`}>Projects</h1>
