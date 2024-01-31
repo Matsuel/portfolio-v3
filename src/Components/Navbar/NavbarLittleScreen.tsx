@@ -1,5 +1,6 @@
 import React, {useContext, useState} from 'react'
 import { DarkModeContext } from '../../darkMode'
+import { Langage } from '../../langage'
 
 import HomeWhite from '../../assets/navbar/homeWhite.svg'
 import HomeFullWhite from '../../assets/navbar/homeFullWhite.svg'
@@ -36,7 +37,7 @@ import Uk from '../../assets/uk.svg'
 
 const NavbarLittleScreen = () => {
     const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
-    const [langue, setLangue] = useState<number>(0)
+    const { langage, toggleLangage } = useContext(Langage)
     const [active, setActive] = useState<number>(0)
     const [openDropdown, setOpenDropdown] = useState<boolean>(false)
 
@@ -44,13 +45,6 @@ const NavbarLittleScreen = () => {
         setOpenDropdown(!openDropdown)
     }
 
-    const handleLangue = () => {
-        if (langue === 0) {
-            setLangue(1)
-        } else {
-            setLangue(0)
-        }
-    }
 
     const handleActive = (index: number) => {
         if (index === 0) {
@@ -84,7 +78,7 @@ const NavbarLittleScreen = () => {
                     <img src={darkMode ? Linkedin : LindedinBlack} alt="linkedin" className="navbarResoIcon" onClick={() => window.open("https://www.linkedin.com/in/math%C3%A9o-lang-146539275/", "_blank")} />
                     <div className={`pip-navbar ${darkMode ? "pip-navbar-light" : "pip-navbar-dark"}`}
                     ></div>
-                    <img src={langue === 0 ? Uk : Fr} alt="fr" className="navbarResoIcon" onClick={() => handleLangue()} />
+                    <img src={langage === 0 ? Uk : Fr} alt="fr" className="navbarResoIcon" onClick={() => toggleLangage()} />
                     <img src={darkMode ? Moon : Mode} alt="mode" className="navbarResoIcon toggleButton" onClick={() => toggleDarkMode()} />
                 </div>
             ) : null}
