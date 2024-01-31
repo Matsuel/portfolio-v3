@@ -3,10 +3,13 @@ import "./Skills.css"
 import randomizeList from '../../Functions/RandomList'
 import capitalizeList from '../../Functions/CapitalizeList'
 import { DarkModeContext } from '../../darkMode'
+import { Langage } from '../../langage'
 
 const Skills = () => {
     const { darkMode } = React.useContext(DarkModeContext)
+    const { langage } = React.useContext(Langage)
     const skillsTypes = ['Language', 'Framework', 'Software', 'Database', 'OS', 'Code editor', 'Versioning', 'Styling', 'Other']
+    const skillsTypesFr = ['Langage', 'Framework', 'Logiciel', 'Données', 'OS', 'Editeur de code', 'Versioning', 'Stylisation', 'Autre']
     const images = require.context('../../assets/skillsAssets', true);
     const imagesList = randomizeList(images.keys().map((image) => images(image)));
     const imageNames = capitalizeList(imagesList.map((imagePath =>{
@@ -25,14 +28,20 @@ const Skills = () => {
     
     return (
         <section className={`skillsWrap ${darkMode ? "homeWrap-dark" : "homeWrap-light"}`} id='skills'>
-            <h1 className={`skills-title ${darkMode ? "title-light" : "title-dark"}`} >Skills</h1>
+            <h1 className={`skills-title ${darkMode ? "title-light" : "title-dark"}`} >
+                {langage === 0 ? "Skills" : "Compétences"}
+            </h1>
             {imagesList.map((image, index:number) => {
                 return (
                     <div className={`skill-image ${darkMode ? "skill-image-dark" : "skill-image-light"}`} key={index}>
                         <img src={image} alt='skill-image' />
                         <p className={`skill-name ${darkMode ? "skill-name-light" : "skill-name-dark"}`}>{imageNames[index]}</p>
                         <p className={`skill-type ${darkMode ? "skill-type-light" : "skill-type-dark"}`}
-                        >{skillsTypes[parseInt(skillsTypesList[index])-1]}</p>
+                        >
+                            {
+                                langage === 0 ? skillsTypes[parseInt(skillsTypesList[index])-1] : skillsTypesFr[parseInt(skillsTypesList[index])-1]
+                            }
+                        </p>
                     </div>
                 )
             })}
