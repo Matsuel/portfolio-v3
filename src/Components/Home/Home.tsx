@@ -17,7 +17,7 @@ const Home = () => {
                     Hello World!
                 </h1>
                 <p className="home-text">
-                I am a full stack web developer based in France. I love back-end development and I'm always looking for new challenges like doing css.
+                I am a full stack web and mobile developer based in France. I love back-end development and I'm always looking for new challenges like doing css.
                 </p>
                 <a className={`home-button ${darkMode ? "home-button-dark" : "home-button-light"} `} href="#contact">Contact me</a>
             </div>
