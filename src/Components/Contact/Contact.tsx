@@ -8,12 +8,14 @@ import Mac1a from '../../assets/mac1a.svg'
 import Mac2a from '../../assets/mac2a.svg'
 import Mac3a from '../../assets/mac3a.svg'
 import { DarkModeContext } from '../../darkMode'
+import { Langage } from '../../langage'
 import emailjs from '@emailjs/browser'
 import dotenv from 'dotenv'
 
 const Contact = () => {
     const [formOpen, setFormOpen] = useState(true);
     const { darkMode } = useContext(DarkModeContext)
+    const { langage } = useContext(Langage)
     const formRef = useRef<HTMLFormElement>(null)
     const [error, setError] = useState(0)
     const [sending, setSending] = useState(false)
@@ -85,23 +87,32 @@ const Contact = () => {
                         <img src={Mac2} alt="mac2" className="mac" onMouseOver={(e) => (e.currentTarget.src = Mac2a)} onMouseOut={(e) => (e.currentTarget.src = Mac2)} onClick={() => setFormOpen(false)} />
                         <img src={Mac3} alt="mac3" className="mac" onMouseOver={(e) => (e.currentTarget.src = Mac3a)} onMouseOut={(e) => (e.currentTarget.src = Mac3)} onClick={() => setFormOpen(true)} />
                     </div>
-                    <h2 className={`message-title ${darkMode ? 'title-light' : 'title-dark'}`}>New Message</h2>
+                    <h2 className={`message-title ${darkMode ? 'title-light' : 'title-dark'}`}>
+                        {langage === 0 ? "New message" : "Nouveau message"}
+                    </h2>
                 </div>
                 {formOpen ? (
                     <>
                         <div className="line">
-                            <label className={`label ${darkMode ? 'title-light' : 'title-dark'}`}>Name:</label>
-                            <input type="text" placeholder="Enter your name please" className={`contact-input ${darkMode ? 'title-light' : 'title-dark'}`} value={form.name} name="name" onChange={handleChange} />
+                            <label className={`label ${darkMode ? 'title-light' : 'title-dark'}`}>
+                                {langage === 0 ? "Name:" : "Nom:"}
+                            </label>
+                            <input type="text" placeholder={langage === 0 ? "Enter your name please" : "Entrez votre nom s'il vous plait"} 
+                            className={`contact-input ${darkMode ? 'title-light' : 'title-dark'}`} value={form.name} name="name" onChange={handleChange} />
                         </div>
                         <div className="line">
                             <label className={`label ${darkMode ? 'title-light' : 'title-dark'}`}>Email:</label>
-                            <input type="email" placeholder="Enter your email please" className={`contact-input ${darkMode ? 'title-light' : 'title-dark'}`} value={form.email} name="email" onChange={handleChange} />
+                            <input type="email" placeholder={langage === 0 ? "Enter your email please" : "Entrez votre email s'il vous plait"}
+                            className={`contact-input ${darkMode ? 'title-light' : 'title-dark'}`} value={form.email} name="email" onChange={handleChange} />
                         </div>
                         <div className="message-line">
-                            <textarea placeholder="Write your message here" className={`contact-input-message ${darkMode ? 'contact-input-message-dark' : 'contact-input-message-light'}`} value={form.message} name="message" onChange={handleChange} />
+                            <textarea placeholder={langage === 0 ? "Enter your message please" : "Entrez votre message s'il vous plait"}
+                            className={`contact-input-message ${darkMode ? 'contact-input-message-dark' : 'contact-input-message-light'}`} value={form.message} name="message" onChange={handleChange} />
                         </div>
                         <div className="button-line">
-                            <button className={`contact-button ${darkMode ? 'contact-button-dark' : 'contact-button-light'}`} type="submit">Send</button>
+                            <button className={`contact-button ${darkMode ? 'contact-button-dark' : 'contact-button-light'}`} type="submit">
+                                {langage === 0 ? "Send" : "Envoyer"}
+                            </button>
                         </div>
                     </>
                 ) : ("")}
