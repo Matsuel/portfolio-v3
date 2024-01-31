@@ -162,6 +162,10 @@
 }
 
 @media screen and (max-width: 800px){
+    .skillsWrap{
+        padding-bottom: 5vh;
+    }
+
     .skill-image{
         width: 70vw;
         height: 20vw;
