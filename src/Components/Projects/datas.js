@@ -54,6 +54,12 @@ export const Datas = [
         public: true
     },
     {
+        title:"Forum",
+        githubLink:"",
+        description:"Forum made with Golang, MySQL for final module project, it's our first web project be indulgent",
+        public: false
+    },
+    {
         title:"Ecommerce (soon)",
         githubLink:"",
         description:"Ecommerce made with PHP Symfony, MySQL for final module project",
