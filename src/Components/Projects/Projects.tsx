@@ -36,7 +36,7 @@ const Projects = () => {
                             <div className="project">
                                 <img src={Images[index]} alt="" className="project-img" />
                                 <div className="project-content">
-                                    <h1 className={`project-number ${darkMode ? 'title-light' : 'title-dark'}`}>0{index + 1}.</h1>
+                                    <h1 className={`project-number ${darkMode ? 'title-light' : 'title-dark'}`}>{index+1 >= 10 ? (index+1): ("0"+ (index+1))}.</h1>
                                     <h2 className={`project-title ${darkMode ? 'title-light' : 'title-dark'}`}>{project.title}</h2>
                                     <p className="project-description">{project.description}</p>
                                     <a target='_blank' href={project.public ? project.githubLink : undefined} className="project-link"><img src={project.public? darkMode? ViewMore:ViewLight:ViewPrivate} alt="" className="project-link-img" /></a>
@@ -45,7 +45,7 @@ const Projects = () => {
                         ) : (
                             <div className="project">
                                 <div className="project-content">
-                                <h1 className={`project-number ${darkMode ? 'title-light' : 'title-dark'}`}>0{index + 1}.</h1>
+                                <h1 className={`project-number ${darkMode ? 'title-light' : 'title-dark'}`}>{index+1 >= 10 ? (index+1): ("0"+ (index+1))}.</h1>
                                     <h2 className={`project-title ${darkMode ? 'title-light' : 'title-dark'}`}>{project.title}</h2>
                                     <p className="project-description">{project.description}</p>
                                     <a target='_blank' href={project.public ? project.githubLink : undefined} className="project-link"><img src={project.public? darkMode? ViewMore:ViewLight:ViewPrivate} alt="" className="project-link-img" /></a>
