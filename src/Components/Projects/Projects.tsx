@@ -15,6 +15,7 @@ import ViewMore from '../../assets/view.svg'
 import ViewLight from '../../assets/viewLight.svg'
 import ViewPrivate from '../../assets/viewPrivate.svg'
 import { DarkModeContext } from '../../darkMode'
+import { Langage } from '../../langage'
 
 interface Project {
     title: string;
@@ -25,10 +26,13 @@ interface Project {
 
 const Projects = () => {
     const { darkMode } = useContext(DarkModeContext)
+    const { langage } = useContext(Langage)
     const Images = [Portfolio, Whatsapp, AppMeteoMobile, LeRebot, Calc, Taquin, AppMeteo, HangmanWeb, HangmanClassic, Forum]
     return (
         <section id='projects' className={`projects ${darkMode ? 'homeWrap-dark' : 'homeWrap-light'}`} >
-            <h1 className={`projects-title ${darkMode ? 'title-light' : 'title-dark'}`}>Projects</h1>
+            <h1 className={`projects-title ${darkMode ? 'title-light' : 'title-dark'}`}>
+                {langage === 0 ? "Projects" : "Projets"}
+            </h1>
             <div className='projects-container'>
                 {Datas.map((project: Project, index: number) => {
                     return (
