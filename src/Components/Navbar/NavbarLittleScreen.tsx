@@ -40,6 +40,7 @@ const NavbarLittleScreen = () => {
     const { langage, toggleLangage } = useContext(Langage)
     const [active, setActive] = useState<number>(0)
     const [openDropdown, setOpenDropdown] = useState<boolean>(false)
+    const linksRef = ["#home", "#skills", "#projects", "#contact"]
 
     const handleOpenDropdown = () => {
         setOpenDropdown(!openDropdown)
@@ -47,19 +48,8 @@ const NavbarLittleScreen = () => {
 
 
     const handleActive = (index: number) => {
-        if (index === 0) {
-            setActive(0)
-            window.location.href = "#home"
-        } else if (index === 1) {
-            setActive(1)
-            window.location.href = "#skills"
-        } else if (index === 2) {
-            setActive(2)
-            window.location.href = "#projects"
-        } else if (index === 3) {
-            setActive(3)
-            window.location.href = "#contact"
-        }
+        setActive(index)
+        window.location.href = linksRef[index]
     }
 
     return (
