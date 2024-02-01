@@ -1,7 +1,6 @@
-.skillsWrap{
+.skillsWrap {
     margin-top: 15vh;
     width: 70vw;
-    min-height: 50vh;
     height: auto;
     margin-bottom: 15vh;
     border-radius: 25px;
@@ -13,7 +12,7 @@
     padding-bottom: 10vh;
 }
 
-.skills-title{
+.skills-title {
     width: 100%;
     text-align: start;
     margin-left: 4vw;
@@ -22,7 +21,7 @@
     margin-bottom: 3vw;
 }
 
-.skill-image{
+.skill-image {
     position: relative;
     width: 10vw;
     height: 10vw;
@@ -35,19 +34,19 @@
     margin-bottom: 1vw;
 }
 
-.skill-image-light{
+.skill-image-light {
     background-color: rgba(243, 243, 243, 1);
     box-shadow: inset 9.91px 9.91px 15px #e9e9e9, inset -9.91px -9.91px 15px #e5e5e5;
-    transition: background-color 0.6s,box-shadow 0.6s;
+    transition: background-color 0.6s, box-shadow 0.6s;
 }
 
-.skill-image-dark{
+.skill-image-dark {
     background-color: rgba(24, 24, 24, 0.8);
     box-shadow: inset 9.91px 9.91px 15px #161616, inset -9.91px -9.91px 15px #1A1A1A;
     transition: background-color 0.6s, box-shadow 0.6s;
 }
 
-.skill-image img{
+.skill-image img {
     width: 35%;
     object-fit: contain;
     display: flex;
@@ -56,7 +55,7 @@
     justify-content: center;
 }
 
-.skill-name{
+.skill-name {
     position: absolute;
     font-size: 12px;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -64,17 +63,17 @@
     left: 1vw;
 }
 
-.skill-name-dark{
+.skill-name-dark {
     color: #000;
     transition: color 0.6s;
 }
 
-.skill-name-light{
+.skill-name-light {
     color: #fff;
     transition: color 0.6s;
 }
 
-.skill-type{
+.skill-type {
     position: absolute;
     font-size: 12px;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -84,63 +83,84 @@
     padding: 2px 10px;
 }
 
-.skill-type-light{
+.skill-type-light {
     color: #808080;
     border: 1px solid #808080;
-    transition: color 0.6s,border 0.6s;
+    transition: color 0.6s, border 0.6s;
 }
 
-.skill-type-dark{
+.skill-type-dark {
     color: #7F7F7F;
     border: 1px solid #7F7F7F;
     transition: color 0.6s, border 0.6s;
 }
 
+.show-more{
+    margin-top: 5vh;
+    width: 100%;
+    height: 5vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.show-more-button {
+    all: unset;
+    width: 100px;
+    height: 5vh;
+    margin-bottom: 4vh;
+    border-radius: 9px;
+    border: 1px solid #fff;
+    text-align: center;
+}
+
 @media screen and (max-width: 600px) {
-    .skillsWrap{
+    .skillsWrap {
         width: 90vw;
     }
 }
 
 @media screen and (max-width: 1600px) {
-    .skills-title{
+    .skills-title {
         font-size: 3rem;
     }
 
-    .skill-type{
+    .skill-type {
         font-size: 10px;
     }
-    
+
 }
 
-@media screen and (max-width: 1500px){
-    .skill-image{
+@media screen and (max-width: 1500px) {
+    .skill-image {
         width: 12vw;
         height: 12vw;
     }
 }
 
-@media screen and (max-width: 1400px){
-    .skill-image{
+@media screen and (max-width: 1400px) {
+    .skill-image {
         width: 14vw;
         height: 14vw;
     }
 }
 
-@media screen and (max-width: 1000px){
-    .skill-image{
+@media screen and (max-width: 1000px) {
+    .skill-image {
         width: 30vw;
         height: 15vw;
         flex-direction: row;
         justify-content: space-between;
     }
 
-    .skill-image img{
+    .skill-image img {
         width: 20%;
         margin-left: 2vw;
     }
 
-    .skill-name{
+    .skill-name {
         position: absolute;
         font-size: 12px;
         text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -150,7 +170,7 @@
         left: 35%;
     }
 
-    .skill-type{
+    .skill-type {
         position: relative;
         font-size: 12px;
         text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -161,17 +181,17 @@
     }
 }
 
-@media screen and (max-width: 800px){
-    .skillsWrap{
+@media screen and (max-width: 800px) {
+    .skillsWrap {
         padding-bottom: 5vh;
     }
 
-    .skill-image{
+    .skill-image {
         width: 70vw;
         height: 20vw;
     }
 
-    .skill-image img{
+    .skill-image img {
         width: 20%;
         margin-left: 5vw;
     }
@@ -181,19 +201,21 @@
         font-size: 14px;
     }
 
-    .skill-type{
+    .skill-type {
         right: 15%;
         font-size: 14px;
     }
+
+    
 }
 
-@media screen and (max-width: 480px){
-    .skill-image{
+@media screen and (max-width: 480px) {
+    .skill-image {
         width: 90vw;
         height: 20vw;
     }
 
-    .skill-image img{
+    .skill-image img {
         width: 15%;
         margin-left: 5vw;
     }
@@ -204,7 +226,7 @@
         font-size: 14px;
     }
 
-    .skill-type{
+    .skill-type {
         right: 15%;
         bottom: 0%;
         font-size: 14px;
