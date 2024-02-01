@@ -21,7 +21,7 @@ interface Project {
     title: string;
     githubLink: string;
     description: string;
-    public: boolean;
+    publicRepo: boolean;
 }
 
 const Projects = () => {
@@ -34,25 +34,25 @@ const Projects = () => {
                 {langage === 0 ? "Projects" : "Projets"}
             </h1>
             <div className='projects-container'>
-                {Datas.map((project: Project, index: number) => {
+                {Datas.map(({title, githubLink, description, publicRepo}: Project, index: number) => {
                     return (
                         (index % 2 !== 0) ? (
-                            <div className="project">
+                            <div className="project" key={index}>
                                 <img src={Images[index]} alt="" className="project-img" />
                                 <div className="project-content">
                                     <h1 className={`project-number ${darkMode ? 'title-light' : 'title-dark'}`}>{index+1 >= 10 ? (index+1): ("0"+ (index+1))}.</h1>
-                                    <h2 className={`project-title ${darkMode ? 'title-light' : 'title-dark'}`}>{project.title}</h2>
-                                    <p className="project-description">{project.description}</p>
-                                    <a target='_blank' href={project.public ? project.githubLink : undefined} className="project-link"><img src={project.public? darkMode? ViewMore:ViewLight:ViewPrivate} alt="" className="project-link-img" /></a>
+                                    <h2 className={`project-title ${darkMode ? 'title-light' : 'title-dark'}`}>{title}</h2>
+                                    <p className="project-description">{description}</p>
+                                    <a target='_blank' href={publicRepo ? githubLink : undefined} className="project-link"><img src={publicRepo? darkMode? ViewMore:ViewLight:ViewPrivate} alt="" className="project-link-img" /></a>
                                 </div>
                             </div>
                         ) : (
-                            <div className="project">
+                            <div className="project" key={index}>
                                 <div className="project-content">
                                 <h1 className={`project-number ${darkMode ? 'title-light' : 'title-dark'}`}>{index+1 >= 10 ? (index+1): ("0"+ (index+1))}.</h1>
-                                    <h2 className={`project-title ${darkMode ? 'title-light' : 'title-dark'}`}>{project.title}</h2>
-                                    <p className="project-description">{project.description}</p>
-                                    <a target='_blank' href={project.public ? project.githubLink : undefined} className="project-link"><img src={project.public? darkMode? ViewMore:ViewLight:ViewPrivate} alt="" className="project-link-img" /></a>
+                                    <h2 className={`project-title ${darkMode ? 'title-light' : 'title-dark'}`}>{title}</h2>
+                                    <p className="project-description">{description}</p>
+                                    <a target='_blank' href={publicRepo ? githubLink : undefined} className="project-link"><img src={publicRepo ? darkMode? ViewMore:ViewLight:ViewPrivate} alt="" className="project-link-img" /></a>
                                 </div>
                                 <img src={Images[index]} alt="" className="project-img" />
                             </div>
