@@ -4,6 +4,7 @@ import randomizeList from '../../Functions/RandomList'
 import capitalizeList from '../../Functions/CapitalizeList'
 import { DarkModeContext } from '../../darkMode'
 import { Langage } from '../../langage'
+import Skill from './Skill'
 
 const Skills = () => {
     const { darkMode } = React.useContext(DarkModeContext)
@@ -33,16 +34,7 @@ const Skills = () => {
             </h1>
             {imagesList.map((image, index:number) => {
                 return (
-                    <div className={`skill-image ${darkMode ? "skill-image-dark" : "skill-image-light"}`} key={index}>
-                        <img src={image} alt='skill-image' />
-                        <p className={`skill-name ${darkMode ? "skill-name-light" : "skill-name-dark"}`}>{imageNames[index]}</p>
-                        <p className={`skill-type ${darkMode ? "skill-type-light" : "skill-type-dark"}`}
-                        >
-                            {
-                                langage === 0 ? skillsTypes[parseInt(skillsTypesList[index])-1] : skillsTypesFr[parseInt(skillsTypesList[index])-1]
-                            }
-                        </p>
-                    </div>
+                    <Skill image={image} index={index} darkMode={darkMode} langage={langage} skillsTypes={skillsTypes} skillsTypesFr={skillsTypesFr} skillsTypesList={skillsTypesList} imageNames={imageNames} />
                 )
             })}
         </section>
