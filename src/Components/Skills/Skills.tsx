@@ -33,21 +33,22 @@ const Skills = () => {
             <h1 className={`skills-title ${darkMode ? "title-light" : "title-dark"}`} >
                 {langage === 0 ? "Skills" : "Compétences"}
             </h1>
-            {showMore ? (
-                imagesList.map((image, index: number) => {
-                    return (
-                        <Skill image={image} index={index} darkMode={darkMode} langage={langage} skillsTypes={skillsTypes} skillsTypesFr={skillsTypesFr} skillsTypesList={skillsTypesList} imageNames={imageNames} />
-                    )
-                })) : (
-                imagesList.slice(0,6).map((image, index: number) => {
-                    return (
-                        <Skill image={image} index={index} darkMode={darkMode} langage={langage} skillsTypes={skillsTypes} skillsTypesFr={skillsTypesFr} skillsTypesList={skillsTypesList} imageNames={imageNames} />
-                    )
-                })
-            )}
+            {imagesList.slice(0, showMore ? imagesList.length : 6).map((image, index: number) => {
+                return (
+                    <Skill image={image} index={index} darkMode={darkMode} langage={langage} skillsTypes={skillsTypes} skillsTypesFr={skillsTypesFr} skillsTypesList={skillsTypesList} imageNames={imageNames} />
+                )
+            })
+            }
             <div className="show-more">
                 <button className={`show-more-button ${darkMode ? "contact-button-dark" : "contact-button-light"}`} onClick={() => setShowMore(!showMore)}>
-                    {langage === 0 ? "Show more" : "Voir plus"}
+                    {
+                        showMore ? (
+                            (langage === 0 ? "Show less" : "Voir moins")
+                        ) : (
+                            (langage === 0 ? "Show more" : "Voir plus")
+                        )
+
+                    }
                 </button>
             </div>
         </section>
