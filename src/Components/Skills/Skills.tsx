@@ -5,6 +5,7 @@ import capitalizeList from '../../Functions/CapitalizeList'
 import { DarkModeContext } from '../../darkMode'
 import { Langage } from '../../langage'
 import Skill from './Skill'
+import ShowMoreSkills from './ShowMoreSkills'
 
 const Skills = () => {
     const { darkMode } = React.useContext(DarkModeContext)
@@ -39,17 +40,8 @@ const Skills = () => {
                 )
             })
             }
-            <div className="show-more">
-                <button className={`show-more-button ${darkMode ? "contact-button-dark" : "contact-button-light"}`} onClick={() => setShowMore(!showMore)}>
-                    {
-                        showMore ? (
-                            (langage === 0 ? "Show less" : "Voir moins")
-                        ) : (
-                            (langage === 0 ? "Show more" : "Voir plus")
-                        )
-                    }
-                </button>
-            </div>
+            <ShowMoreSkills showMore={showMore} setShowMore={setShowMore} darkMode={darkMode} langage={langage} />
+            
         </section>
     )
 }

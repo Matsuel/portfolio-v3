@@ -1,4 +1,4 @@
-export type Skill = {
+export type SkillProps = {
     image: string;
     index: number;
     darkMode: boolean;
@@ -7,4 +7,11 @@ export type Skill = {
     skillsTypesFr: string[];
     skillsTypesList: string[];
     imageNames: string[];
+}
+
+export type ShowMore = {
+    showMore: boolean;
+    setShowMore: (value: boolean) => void;
+    darkMode: boolean;
+    langage: number;
 }

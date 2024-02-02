@@ -1,10 +1,10 @@
 import React from 'react'
 import "./Skills.css"
-import { Skill } from './type'
+import { SkillProps } from './type'
 
 
 
-const Skill = ({ image, index, darkMode, langage, skillsTypes, skillsTypesFr, skillsTypesList, imageNames }: Skill) => {
+const Skill = ({ image, index, darkMode, langage, skillsTypes, skillsTypesFr, skillsTypesList, imageNames }: SkillProps) => {
     return (
         <div className={`skill-image ${darkMode ? "skill-image-dark" : "skill-image-light"}`} key={index}>
             <img src={image} alt='skill-image' />
