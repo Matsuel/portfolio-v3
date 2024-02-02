@@ -61,8 +61,8 @@ export const Datas = [
     },
     {
         title:"Ecommerce",
-        githubLink:"",
+        githubLink:"https://github.com/Matsuel/projet-symfony",
         description:"Ecommerce made with PHP Symfony, MySQL for final module project",
-        publicRepo: false
+        publicRepo: true
     }
 ];
