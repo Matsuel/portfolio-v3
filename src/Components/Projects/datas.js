@@ -60,7 +60,7 @@ export const Datas = [
         publicRepo: false
     },
     {
-        title:"Ecommerce (soon)",
+        title:"Ecommerce",
         githubLink:"",
         description:"Ecommerce made with PHP Symfony, MySQL for final module project",
         publicRepo: false
