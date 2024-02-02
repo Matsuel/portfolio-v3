@@ -19,23 +19,30 @@ import { DarkModeContext } from '../../darkMode'
 import { Langage } from '../../langage'
 import { ProjectType } from './types'
 import Project from './Project'
+import ShowMoreProjects from './ShowMoreProjects'
 
 const Projects = () => {
     const { darkMode } = useContext(DarkModeContext)
     const { langage } = useContext(Langage)
+    const [showMore, setShowMore] = React.useState<boolean>(false)
     const Images = [Portfolio, Whatsapp, AppMeteoMobile, LeRebot, Calc, Taquin, AppMeteo, HangmanWeb, HangmanClassic, Forum, Ecommerce]
+
     return (
         <section id='projects' className={`projects ${darkMode ? 'homeWrap-dark' : 'homeWrap-light'}`} >
             <h1 className={`projects-title ${darkMode ? 'title-light' : 'title-dark'}`}>
                 {langage === 0 ? "Projects" : "Projets"}
             </h1>
+
             <div className='projects-container'>
-                {Datas.map(({title, githubLink, description, publicRepo}: ProjectType, index: number) => {
+                {Datas.slice(0, showMore ? Datas.length : 5).map(({title, githubLink, description, publicRepo}: ProjectType, index: number) => {
                     return (
                         <Project title={title} githubLink={githubLink} description={description} publicRepo={publicRepo} index={index} Images={Images} darkMode={darkMode} ViewMore={ViewMore} ViewLight={ViewLight} ViewPrivate={ViewPrivate} />
                     )
                 })}
             </div>
+
+            <ShowMoreProjects showMore={showMore} setShowMore={setShowMore} langage={langage} darkMode={darkMode} />
+            
         </section>
     )
 }

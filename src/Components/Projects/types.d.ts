@@ -17,3 +17,10 @@ export type ProjectsProps = {
     ViewLight: string,
     ViewPrivate: string,
 }
+
+export type ShowMoreProjectsProps = {
+    showMore: boolean, 
+    setShowMore: (value: boolean) => void,
+    langage: number,
+    darkMode: boolean,
+}
