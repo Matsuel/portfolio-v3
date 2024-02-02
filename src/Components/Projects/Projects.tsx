@@ -16,28 +16,8 @@ import ViewLight from '../../assets/viewLight.svg'
 import ViewPrivate from '../../assets/viewPrivate.svg'
 import { DarkModeContext } from '../../darkMode'
 import { Langage } from '../../langage'
-import ProjectEven from './ProjectEven'
-import ProjectOdd from './ProjectOdd'
-
-interface Project {
-    title: string;
-    githubLink: string;
-    description: string;
-    publicRepo: boolean;
-}
-
-type Props = {
-    title: string;
-    githubLink: string;
-    description: string;
-    publicRepo: boolean;
-    index: number;
-    Images: string[],
-    darkMode: boolean,
-    ViewMore: string,
-    ViewLight: string,
-    ViewPrivate: string,
-}
+import { ProjectType } from './types'
+import Project from './Project'
 
 const Projects = () => {
     const { darkMode } = useContext(DarkModeContext)
@@ -49,13 +29,9 @@ const Projects = () => {
                 {langage === 0 ? "Projects" : "Projets"}
             </h1>
             <div className='projects-container'>
-                {Datas.map(({title, githubLink, description, publicRepo}: Project, index: number) => {
+                {Datas.map(({title, githubLink, description, publicRepo}: ProjectType, index: number) => {
                     return (
-                        (index % 2 !== 0) ? (
-                            <ProjectOdd title={title} githubLink={githubLink} description={description} publicRepo={publicRepo} index={index} Images={Images} darkMode={darkMode} ViewMore={ViewMore} ViewLight={ViewLight} ViewPrivate={ViewPrivate} />
-                        ) : (
-                            <ProjectEven title={title} githubLink={githubLink} description={description} publicRepo={publicRepo} index={index} Images={Images} darkMode={darkMode} ViewMore={ViewMore} ViewLight={ViewLight} ViewPrivate={ViewPrivate} />
-                        )
+                        <Project title={title} githubLink={githubLink} description={description} publicRepo={publicRepo} index={index} Images={Images} darkMode={darkMode} ViewMore={ViewMore} ViewLight={ViewLight} ViewPrivate={ViewPrivate} />
                     )
                 })}
             </div>
