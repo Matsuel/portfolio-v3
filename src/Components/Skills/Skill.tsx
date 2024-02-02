@@ -1,18 +1,10 @@
 import React from 'react'
 import "./Skills.css"
+import { Skill } from './type'
 
-type Props = {
-    image: string;
-    index: number;
-    darkMode: boolean;
-    langage: number;
-    skillsTypes: string[];
-    skillsTypesFr: string[];
-    skillsTypesList: string[];
-    imageNames: string[];
-}
 
-const Skill = ({ image, index, darkMode, langage, skillsTypes, skillsTypesFr, skillsTypesList, imageNames }: Props) => {
+
+const Skill = ({ image, index, darkMode, langage, skillsTypes, skillsTypesFr, skillsTypesList, imageNames }: Skill) => {
     return (
         <div className={`skill-image ${darkMode ? "skill-image-dark" : "skill-image-light"}`} key={index}>
             <img src={image} alt='skill-image' />

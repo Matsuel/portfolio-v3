@@ -47,7 +47,6 @@ const Skills = () => {
                         ) : (
                             (langage === 0 ? "Show more" : "Voir plus")
                         )
-
                     }
                 </button>
             </div>
