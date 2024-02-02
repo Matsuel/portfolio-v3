@@ -137,8 +137,8 @@
         margin-bottom: 10vh;
     }    
 
-    .project:nth-child(even){
-        flex-direction: column-reverse;
+    .project:nth-child(odd){
+        flex-direction: column;
     }
 
     .project-img{
